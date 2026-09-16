@@ -1,0 +1,41 @@
+{
+  "call_id": "6707941f062e",
+  "provider": "zhipu",
+  "model": "glm-5.3-flash",
+  "endpoint": "https://open.bigmodel.cn/api/paas/v4/chat/completions",
+  "started_at": "2026-09-16T16:27:00.263587+00:00",
+  "finished_at": "2026-09-16T16:27:07.401745+00:00",
+  "latency_ms": 7137.7,
+  "status": "ok",
+  "request": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是 Stable Diffusion 风格的文生图提示词专家。用户会给你一句口语化的中文需求，\n你需要把它改写成经典文生图模型（如 Stable Diffusion / FLUX）能消化的提示词。\n\n要求：\n1. prompt 字段：逗号分隔的英文 tag，先主体后细节，包含质量词\n   （如 masterpiece, best quality, highly detailed），必要时包含画风、构图、光线、情绪词。\n2. negative_prompt 字段：逗号分隔的英文负面提示词（如 lowres, bad anatomy, blurry, watermark, text 等）。\n3. style_notes 字段：一句中文，说明你这次改写做了哪些关键增补/取舍。\n4. 只输出一个 JSON 对象，不要输出任何其他文字。格式：\n{\"prompt\": \"...\", \"negative_prompt\": \"...\", \"style_notes\": \"...\"}\n"
+      },
+      {
+        "role": "user",
+        "content": "帮我画一个周末加班的程序员，风格丧一点"
+      }
+    ]
+  },
+  "response_id": "202609170027029db1f0d624cf4f83",
+  "usage": {
+    "completion_tokens": 414,
+    "prompt_tokens": 207,
+    "total_tokens": 621,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 188,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cache_write_tokens": null,
+      "cached_tokens": 0
+    }
+  },
+  "error": null,
+  "raw_output": "{\"prompt\": \"masterpiece, best quality, highly detailed, 1boy, a tired programmer working overtime on weekend, hunched over a laptop, slouched posture, dark circles under eyes, messy unwashed hair, stubble, empty expression, dead fish eyes, dimly lit small apartment at night, cold blue monitor glow on face, cluttered desk, multiple empty coffee cups, instant noodle bowl, crumpled papers, muted desaturated colors, gloomy atmosphere, melancholic mood, cinematic low-key lighting, moody shadows, semi-realistic illustration style, side view composition\", \"negative_prompt\": \"lowres, bad anatomy, bad hands, extra fingers, blurry, watermark, text, logo, signature, jpeg artifacts, oversaturated, cheerful, smiling, bright colors, flat lighting, deformed, extra limbs\", \"style_notes\": \"把'丧'具象化为黑眼圈、瘫坐姿势、死鱼眼和冷色屏幕光，搭配杂乱桌面（空咖啡杯、泡面）与低饱和暗调光影来强化颓丧氛围。\"}"
+}

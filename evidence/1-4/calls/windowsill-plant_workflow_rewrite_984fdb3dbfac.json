@@ -1,0 +1,41 @@
+{
+  "call_id": "984fdb3dbfac",
+  "provider": "zhipu",
+  "model": "glm-5.3-flash",
+  "endpoint": "https://open.bigmodel.cn/api/paas/v4/chat/completions",
+  "started_at": "2026-09-16T16:27:19.974840+00:00",
+  "finished_at": "2026-09-16T16:27:23.622330+00:00",
+  "latency_ms": 3647.3,
+  "status": "ok",
+  "request": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是 Stable Diffusion 风格的文生图提示词专家。用户会给你一句口语化的中文需求，\n你需要把它改写成经典文生图模型（如 Stable Diffusion / FLUX）能消化的提示词。\n\n要求：\n1. prompt 字段：逗号分隔的英文 tag，先主体后细节，包含质量词\n   （如 masterpiece, best quality, highly detailed），必要时包含画风、构图、光线、情绪词。\n2. negative_prompt 字段：逗号分隔的英文负面提示词（如 lowres, bad anatomy, blurry, watermark, text 等）。\n3. style_notes 字段：一句中文，说明你这次改写做了哪些关键增补/取舍。\n4. 只输出一个 JSON 对象，不要输出任何其他文字。格式：\n{\"prompt\": \"...\", \"negative_prompt\": \"...\", \"style_notes\": \"...\"}\n"
+      },
+      {
+        "role": "user",
+        "content": "帮我画一盆放在窗台上的绿植，早晨的阳光刚好照进来"
+      }
+    ]
+  },
+  "response_id": "2026091700272094970f5f633848fd",
+  "usage": {
+    "completion_tokens": 265,
+    "prompt_tokens": 213,
+    "total_tokens": 478,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 63,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cache_write_tokens": null,
+      "cached_tokens": 0
+    }
+  },
+  "error": null,
+  "raw_output": "{\"prompt\": \"masterpiece, best quality, highly detailed, a potted green plant on a windowsill, lush green leaves, terracotta pot, morning sunlight streaming through the window, warm golden light, soft sunbeams, light rays through foliage, sheer curtains, cozy atmosphere, peaceful mood, indoor scene, close-up composition, shallow depth of field, bokeh, photorealistic, 8k, sharp focus, natural lighting, cinematic lighting\", \"negative_prompt\": \"lowres, bad anatomy, blurry, watermark, text, signature, jpeg artifacts, oversaturated, dark, gloomy, deformed leaves, extra plants, ugly, out of frame, low contrast\", \"style_notes\": \"将'早晨的阳光刚好照进来'具体化为金色晨光与光束穿过窗台的效果，补充了陶土花盆、纱帘、浅景深散景等细节，并指定写实照片风格与特写构图以突出温馨氛围。\"}"
+}

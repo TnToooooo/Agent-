@@ -1,0 +1,23 @@
+{
+  "call_id": "c70150b11227",
+  "provider": "dashscope",
+  "model": "wan2.2-t2i-flash",
+  "endpoint": "https://dashscope.aliyuncs.com/api/v1/tasks/f4bc1901-841e-47d0-91c3-8d2df8396521",
+  "started_at": "2026-09-16T16:27:07.699130+00:00",
+  "finished_at": "2026-09-16T16:27:18.147923+00:00",
+  "latency_ms": 10448.2,
+  "status": "ok",
+  "request": {},
+  "response_id": "058e3c63-9043-98f3-88f5-cce9d5a1caf1",
+  "usage": {
+    "image_count": 1
+  },
+  "error": null,
+  "task_id": "f4bc1901-841e-47d0-91c3-8d2df8396521",
+  "task_metrics": {
+    "submit_time": "2026-09-17 00:27:07.664",
+    "scheduled_time": "2026-09-17 00:27:07.729",
+    "end_time": "2026-09-17 00:27:15.356"
+  },
+  "actual_prompt": "Cinematic semi-realistic illustration, side view of a weary young male programmer slouched at a cluttered desk in a dimly lit urban apartment at night. His unkempt hair, shadowed stubble, and deep dark circles contrast with the cold blue glow of his laptop screen illuminating his hollow, exhausted gaze. Surrounding him: stacked empty coffee cups, an abandoned instant noodle bowl, crumpled code printouts, tangled earphones, and scattered energy drink cans. Walls are bare; faint city lights bleed through half-closed blinds. Muted desaturated palette dominated by slate blues, charcoal grays, and sickly amber highlights. Low-key lighting casts long, moody shadows—evoking isolation, fatigue, and quiet desperation."
+}

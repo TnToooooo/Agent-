@@ -1,0 +1,24 @@
+{
+  "call_id": "825d2657cffb",
+  "provider": "dashscope",
+  "model": "wan2.2-t2i-flash",
+  "endpoint": "https://dashscope.aliyuncs.com/api/v1/services/aigc/text2image/image-synthesis",
+  "started_at": "2026-09-16T16:28:21.271952+00:00",
+  "finished_at": "2026-09-16T16:28:21.548359+00:00",
+  "latency_ms": 276.4,
+  "status": "ok",
+  "request": {
+    "input": {
+      "prompt": "masterpiece, best quality, highly detailed, futuristic city at dawn, cyberpunk metropolis, towering glass skyscrapers, flying vehicles, holographic billboards, golden morning sunlight, soft mist between buildings, sun rising over horizon, volumetric light rays, wide angle cityscape, aerial view, clean utopian atmosphere, cinematic lighting, science fiction concept art, ultra wide shot, lens flare, reflections on glass surfaces, people commuting on sky bridges, depth of field",
+      "negative_prompt": "lowres, bad anatomy, blurry, watermark, text, signature, jpeg artifacts, dark night scene, oversaturated, distorted buildings, cropped, low quality, ugly, duplicate, night sky, heavy rain, grayscale"
+    },
+    "parameters": {
+      "size": "1024*1024",
+      "n": 1
+    }
+  },
+  "response_id": "cb0b53b4-88d0-90f9-89b9-c3f054f04e8a",
+  "usage": {},
+  "error": null,
+  "task_id": "d0cda237-eefe-4c0a-8f96-a9dc0770def6"
+}

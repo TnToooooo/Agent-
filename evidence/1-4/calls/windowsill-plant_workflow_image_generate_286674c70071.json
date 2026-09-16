@@ -1,0 +1,23 @@
+{
+  "call_id": "286674c70071",
+  "provider": "dashscope",
+  "model": "wan2.2-t2i-flash",
+  "endpoint": "https://dashscope.aliyuncs.com/api/v1/tasks/7a212b1d-6e86-4de5-8127-6ff2c806aade",
+  "started_at": "2026-09-16T16:27:23.923757+00:00",
+  "finished_at": "2026-09-16T16:27:39.548226+00:00",
+  "latency_ms": 15623.6,
+  "status": "ok",
+  "request": {},
+  "response_id": "37fcb3a4-e9ab-9739-9894-5fc4cc063a93",
+  "usage": {
+    "image_count": 1
+  },
+  "error": null,
+  "task_id": "7a212b1d-6e86-4de5-8127-6ff2c806aade",
+  "task_metrics": {
+    "submit_time": "2026-09-17 00:27:23.886",
+    "scheduled_time": "2026-09-17 00:27:23.927",
+    "end_time": "2026-09-17 00:27:35.209"
+  },
+  "actual_prompt": "Photorealistic 8K close-up of a thriving potted fiddle-leaf fig on a sunlit wooden windowsill. Rich emerald, veined leaves catch warm morning light; terracotta pot shows subtle texture and faint clay patina. Golden sunbeams pierce sheer ivory linen curtains, casting delicate light rays through overlapping foliage. Soft bokeh blurs a cozy interior background—hint of a bookshelf and woven rug. Natural cinematic lighting enhances leaf translucency and dewy highlights. Shallow depth of field keeps the plant’s central leaf in razor-sharp focus while gently softening edges. Peaceful, serene domestic atmosphere with tactile realism and organic warmth."
+}

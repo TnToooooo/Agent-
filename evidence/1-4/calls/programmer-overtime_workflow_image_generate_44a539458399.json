@@ -1,0 +1,24 @@
+{
+  "call_id": "44a539458399",
+  "provider": "dashscope",
+  "model": "wan2.2-t2i-flash",
+  "endpoint": "https://dashscope.aliyuncs.com/api/v1/services/aigc/text2image/image-synthesis",
+  "started_at": "2026-09-16T16:27:07.401822+00:00",
+  "finished_at": "2026-09-16T16:27:07.699085+00:00",
+  "latency_ms": 297.2,
+  "status": "ok",
+  "request": {
+    "input": {
+      "prompt": "masterpiece, best quality, highly detailed, 1boy, a tired programmer working overtime on weekend, hunched over a laptop, slouched posture, dark circles under eyes, messy unwashed hair, stubble, empty expression, dead fish eyes, dimly lit small apartment at night, cold blue monitor glow on face, cluttered desk, multiple empty coffee cups, instant noodle bowl, crumpled papers, muted desaturated colors, gloomy atmosphere, melancholic mood, cinematic low-key lighting, moody shadows, semi-realistic illustration style, side view composition",
+      "negative_prompt": "lowres, bad anatomy, bad hands, extra fingers, blurry, watermark, text, logo, signature, jpeg artifacts, oversaturated, cheerful, smiling, bright colors, flat lighting, deformed, extra limbs"
+    },
+    "parameters": {
+      "size": "1024*1024",
+      "n": 1
+    }
+  },
+  "response_id": "0b6db274-4447-915f-9992-0d0498c419e2",
+  "usage": {},
+  "error": null,
+  "task_id": "f4bc1901-841e-47d0-91c3-8d2df8396521"
+}

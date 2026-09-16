@@ -1,0 +1,23 @@
+{
+  "call_id": "a52128e33d6b",
+  "provider": "dashscope",
+  "model": "wan2.2-t2i-flash",
+  "endpoint": "https://dashscope.aliyuncs.com/api/v1/tasks/d0cda237-eefe-4c0a-8f96-a9dc0770def6",
+  "started_at": "2026-09-16T16:28:21.548412+00:00",
+  "finished_at": "2026-09-16T16:28:31.994086+00:00",
+  "latency_ms": 10445.2,
+  "status": "ok",
+  "request": {},
+  "response_id": "d923d085-8392-9ce9-aeba-a4ba01bf48e9",
+  "usage": {
+    "image_count": 1
+  },
+  "error": null,
+  "task_id": "d0cda237-eefe-4c0a-8f96-a9dc0770def6",
+  "task_metrics": {
+    "submit_time": "2026-09-17 00:28:21.518",
+    "scheduled_time": "2026-09-17 00:28:21.552",
+    "end_time": "2026-09-17 00:28:28.700"
+  },
+  "actual_prompt": "Ultra-detailed cinematic concept art of a futuristic utopian metropolis at dawn: gleaming glass-and-steel skyscrapers with aerodynamic curves, interwoven by transparent sky bridges bustling with commuters in sleek modern attire. Flying vehicles glide along orderly aerial lanes; holographic billboards display soft blue and gold interfaces. Golden morning light breaks over the horizon, casting volumetric rays through gentle atmospheric mist. Glass facades reflect sunrise hues and cloud streaks. Wide-angle aerial perspective emphasizes scale and harmony. Clean, optimistic cyberpunk aesthetic—no decay or grit—enhanced by subtle lens flare, crisp reflections, and shallow depth of field focusing on central spire. 8K resolution, sci-fi realism."
+}

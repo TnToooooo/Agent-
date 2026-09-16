@@ -1,0 +1,23 @@
+{
+  "call_id": "5712307944b5",
+  "provider": "dashscope",
+  "model": "wan2.2-t2i-flash",
+  "endpoint": "https://dashscope.aliyuncs.com/api/v1/tasks/08009e39-41ed-4e65-a179-0f7a7ac1ef22",
+  "started_at": "2026-09-16T16:27:55.182687+00:00",
+  "finished_at": "2026-09-16T16:28:05.622933+00:00",
+  "latency_ms": 10439.7,
+  "status": "ok",
+  "request": {},
+  "response_id": "60167552-4f58-9502-80f0-3d895a1bcbf8",
+  "usage": {
+    "image_count": 1
+  },
+  "error": null,
+  "task_id": "08009e39-41ed-4e65-a179-0f7a7ac1ef22",
+  "task_metrics": {
+    "submit_time": "2026-09-17 00:27:55.145",
+    "scheduled_time": "2026-09-17 00:27:55.195",
+    "end_time": "2026-09-17 00:28:02.947"
+  },
+  "actual_prompt": "Ultra-high-resolution commercial product photography, premium wireless over-ear noise-cancelling headphones levitating mid-air with subtle magnetic suspension effect. Sleek matte gunmetal chassis, plush memory-foam ear cushions wrapped in sustainably sourced dark taupe leather, precision-stitched seams visible. Centered composition against deep charcoal black background transitioning to midnight blue gradient at bottom. Soft rim lighting outlines contours; gentle overhead spotlight creates delicate highlights on metal arms and earcup curves. Subtle ambient glow enhances three-dimensionality. Sharp focus, studio-perfect clarity, luxury advertising aesthetic—calm, sophisticated, nocturnal serenity. Ample negative space for typography, photorealistic texture detail on leather and brushed metal."
+}

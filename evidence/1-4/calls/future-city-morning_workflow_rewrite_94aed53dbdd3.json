@@ -1,0 +1,41 @@
+{
+  "call_id": "94aed53dbdd3",
+  "provider": "zhipu",
+  "model": "glm-5.3-flash",
+  "endpoint": "https://open.bigmodel.cn/api/paas/v4/chat/completions",
+  "started_at": "2026-09-16T16:28:16.418027+00:00",
+  "finished_at": "2026-09-16T16:28:21.271889+00:00",
+  "latency_ms": 4853.6,
+  "status": "ok",
+  "request": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是 Stable Diffusion 风格的文生图提示词专家。用户会给你一句口语化的中文需求，\n你需要把它改写成经典文生图模型（如 Stable Diffusion / FLUX）能消化的提示词。\n\n要求：\n1. prompt 字段：逗号分隔的英文 tag，先主体后细节，包含质量词\n   （如 masterpiece, best quality, highly detailed），必要时包含画风、构图、光线、情绪词。\n2. negative_prompt 字段：逗号分隔的英文负面提示词（如 lowres, bad anatomy, blurry, watermark, text 等）。\n3. style_notes 字段：一句中文，说明你这次改写做了哪些关键增补/取舍。\n4. 只输出一个 JSON 对象，不要输出任何其他文字。格式：\n{\"prompt\": \"...\", \"negative_prompt\": \"...\", \"style_notes\": \"...\"}\n"
+      },
+      {
+        "role": "user",
+        "content": "帮我画一幅“未来城市的早晨”的画"
+      }
+    ]
+  },
+  "response_id": "202609170028168464136ff5da403d",
+  "usage": {
+    "completion_tokens": 351,
+    "prompt_tokens": 206,
+    "total_tokens": 557,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 146,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cache_write_tokens": null,
+      "cached_tokens": 0
+    }
+  },
+  "error": null,
+  "raw_output": "{\"prompt\": \"masterpiece, best quality, highly detailed, futuristic city at dawn, cyberpunk metropolis, towering glass skyscrapers, flying vehicles, holographic billboards, golden morning sunlight, soft mist between buildings, sun rising over horizon, volumetric light rays, wide angle cityscape, aerial view, clean utopian atmosphere, cinematic lighting, science fiction concept art, ultra wide shot, lens flare, reflections on glass surfaces, people commuting on sky bridges, depth of field\", \"negative_prompt\": \"lowres, bad anatomy, blurry, watermark, text, signature, jpeg artifacts, dark night scene, oversaturated, distorted buildings, cropped, low quality, ugly, duplicate, night sky, heavy rain, grayscale\", \"style_notes\": \"把口语的“早晨”具体化为黎明金光与薄雾的体积光，补充了飞行器、全息广告牌等未来元素和广角城市构图，用乌托邦式清新氛围替代暗黑赛博风\"}"
+}

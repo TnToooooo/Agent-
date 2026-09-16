@@ -1,0 +1,41 @@
+{
+  "call_id": "b108a58b9b7b",
+  "provider": "zhipu",
+  "model": "glm-5.3-flash",
+  "endpoint": "https://open.bigmodel.cn/api/paas/v4/chat/completions",
+  "started_at": "2026-09-16T16:27:43.767032+00:00",
+  "finished_at": "2026-09-16T16:27:54.808050+00:00",
+  "latency_ms": 11040.4,
+  "status": "ok",
+  "request": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是 Stable Diffusion 风格的文生图提示词专家。用户会给你一句口语化的中文需求，\n你需要把它改写成经典文生图模型（如 Stable Diffusion / FLUX）能消化的提示词。\n\n要求：\n1. prompt 字段：逗号分隔的英文 tag，先主体后细节，包含质量词\n   （如 masterpiece, best quality, highly detailed），必要时包含画风、构图、光线、情绪词。\n2. negative_prompt 字段：逗号分隔的英文负面提示词（如 lowres, bad anatomy, blurry, watermark, text 等）。\n3. style_notes 字段：一句中文，说明你这次改写做了哪些关键增补/取舍。\n4. 只输出一个 JSON 对象，不要输出任何其他文字。格式：\n{\"prompt\": \"...\", \"negative_prompt\": \"...\", \"style_notes\": \"...\"}\n"
+      },
+      {
+        "role": "user",
+        "content": "帮我做一张新款降噪耳机的产品海报，主打“深夜独处也清净”这句文案，风格简约高级"
+      }
+    ]
+  },
+  "response_id": "20260917002743b145042970a249aa",
+  "usage": {
+    "completion_tokens": 798,
+    "prompt_tokens": 220,
+    "total_tokens": 1018,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 566,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cache_write_tokens": null,
+      "cached_tokens": 0
+    }
+  },
+  "error": null,
+  "raw_output": "{\"prompt\": \"masterpiece, best quality, highly detailed, 8k, commercial product photography, premium wireless over-ear noise-cancelling headphones, floating levitating headphones, centered composition, minimalist product poster, dark charcoal black background, deep midnight blue gradient, soft rim lighting, gentle spotlight from above, subtle ambient glow, matte metal texture, fine leather ear cushions, clean composition, large negative space for text, high-end aesthetic, calm serene atmosphere, quiet late night mood, photorealistic, sharp focus, studio lighting, luxury advertising style\", \"negative_prompt\": \"lowres, blurry, bad anatomy, watermark, text, logo, signature, username, jpeg artifacts, oversaturated, cluttered background, people, hands, human face, low quality, worst quality, deformed, distorted, extra parts, messy wires, harsh lighting, cartoon, anime, painting\", \"style_notes\": \"将“深夜独处也清净”转译为午夜深蓝暗调与柔光静谧氛围，构图居中并预留大面积负空间；因模型难以生成中文标语，建议这句文案在后期排版叠加。\"}"
+}
