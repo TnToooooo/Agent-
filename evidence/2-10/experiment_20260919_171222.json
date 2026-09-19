@@ -1,0 +1,110 @@
+[
+  {
+    "metrics": {
+      "strategy": "no_compression",
+      "success": false,
+      "iterations": 8,
+      "tool_calls": 27,
+      "context_overflows": 1,
+      "execution_time": 31.609871864318848,
+      "total_tokens": 303596,
+      "error": "Context window exceeded - 103,857 tokens in last request (limit: 128000)",
+      "final_answer_length": 0,
+      "compression_ratio": 1.355,
+      "total_original_size": 10589,
+      "total_compressed_size": 14346
+    },
+    "final_answer": null,
+    "timestamp": "2026-09-19T17:12:54.550799"
+  },
+  {
+    "metrics": {
+      "strategy": "non_context_aware_individual_summary",
+      "success": false,
+      "iterations": 15,
+      "tool_calls": 53,
+      "context_overflows": 3,
+      "execution_time": 134.12676978111267,
+      "total_tokens": 858114,
+      "error": null,
+      "final_answer_length": 0,
+      "compression_ratio": 1.467,
+      "total_original_size": 17201,
+      "total_compressed_size": 25236
+    },
+    "final_answer": null,
+    "timestamp": "2026-09-19T17:15:10.697265"
+  },
+  {
+    "metrics": {
+      "strategy": "non_context_aware_combined_summary",
+      "success": false,
+      "iterations": 15,
+      "tool_calls": 56,
+      "context_overflows": 8,
+      "execution_time": 194.0316505432129,
+      "total_tokens": 1363983,
+      "error": null,
+      "final_answer_length": 0,
+      "compression_ratio": 1.742,
+      "total_original_size": 19451,
+      "total_compressed_size": 33883
+    },
+    "final_answer": null,
+    "timestamp": "2026-09-19T17:18:26.811357"
+  },
+  {
+    "metrics": {
+      "strategy": "context_aware_summary",
+      "success": true,
+      "iterations": 14,
+      "tool_calls": 50,
+      "context_overflows": 3,
+      "execution_time": 232.92081713676453,
+      "total_tokens": 973112,
+      "error": null,
+      "final_answer_length": 6684,
+      "compression_ratio": 2.303,
+      "total_original_size": 18379,
+      "total_compressed_size": 42321
+    },
+    "final_answer": "I've gathered comprehensive information from Wikipedia (OpenAI and individual founder pages), the Observer's profile of the 11 founding members, and Y Combinator's official people page. Here is my complete report.\n\n---\n\n# OpenAI Co-Founders: Complete List & Current Affiliations\n\n## The 11 Co-Founders (founded December 8, 2015)\n\nThe authoritative list of OpenAI's founding team consists of **11 people**. (Note: Dario and Daniela Amodei are frequently mentioned in OpenAI's early history but are generally classified as **early employees/leaders who joined in 2016**, not members of the founding team \u2014 see note at the end.)\n\n| # | Co-Founder | Role at Founding |\n|---|-----------|------------------|\n| 1 | **Sam Altman** | Co-chair |\n| 2 | **Elon Musk** | Co-chair |\n| 3 | **Ilya Sutskever** | Chief Scientist |\n| 4 | **Greg Brockman** | CTO |\n| 5 | **Trevor Blackwell** | Founding researcher |\n| 6 | **Vicki Cheung** | Head of Infrastructure |\n| 7 | **Andrej Karpathy** | Founding research scientist |\n| 8 | **Durk (Diederik) Kingma** | Algorithms team lead |\n| 9 | **John Schulman** | RL team lead |\n| 10 | **Pamela Vagata** | Founding infrastructure/product |\n| 11 | **Wojciech Zaremba** | Robotics/GPT research |\n\n---\n\n## Current (2026) Affiliations\n\n**1. Sam Altman \u2014 CEO of OpenAI**\nRemained at OpenAI; served as full-time CEO since 2019. Briefly ousted and reinstated in November 2023. Still CEO and a board member as of 2026, overseeing OpenAI's IPO preparations (targeted ~2027).\n\n**2. Elon Musk \u2014 CEO of Tesla & SpaceX; founder of xAI; owner of X**\nLeft the OpenAI board in **2018**. Current roles: **CEO of Tesla**, **CEO of SpaceX**, **founder/CEO of xAI** (since 2023, maker of Grok), **owner of X (formerly Twitter)**, plus Neuralink and The Boring Company. He sued OpenAI/Altman (*Musk v. Altman*); a jury **rejected his claims in May 2026** on statute-of-limitations grounds.\n\n**3. Ilya Sutskever \u2014 Co-founder & CEO of Safe Superintelligence Inc. (SSI)**\nLeft OpenAI in **May 2024**. Co-founded **Safe Superintelligence Inc.** (June 2024) with Daniel Gross and Daniel Levy. When Gross left for Meta (June 2025), **Sutskever became CEO of SSI**. SSI was valued at ~$32B in 2025; **Nvidia announced a $5B investment in SSI in July 2026**.\n\n**4. Greg Brockman \u2014 President of OpenAI (continues)**\nStill at OpenAI. Listed as **President and \"CEO of Applications.\"** Briefly resigned during the Nov. 2023 crisis and returned; took a sabbatical Aug\u2013Nov 2024. Served on the OpenAI board 2017\u20132023.\n\n**5. Trevor Blackwell \u2014 Y Combinator founder (retired); Anybots founder**\nCo-founder of **Y Combinator** (2005) and founder/former CEO of **Anybots** (robotics). Y Combinator's official people page now lists him as **\"Founder, Retired.\"** He is based in **England**. Wikipedia does not show him holding another current operating role.\n\n**6. Vicki Cheung \u2014 (last known: co-founder of Gantry)** \u26a0\ufe0f *Least-documented; 2026 status unverified*\nFounding engineer/Head of Infrastructure at OpenAI, left in **2018**. Then software engineer at **Lyft** (2018\u20132020). In **2020** she co-founded **Gantry**, an ML/LLM monitoring & evaluation startup, with fellow ex-OpenAI engineer Josh Tobin. **I was unable to confirm her 2026 role** with available sources (see caveat below).\n\n**7. Andrej Karpathy \u2014 Joined Anthropic (May 2026); founder of Eureka Labs**\nOpenAI (2015\u20132017), then Tesla AI Director (2017\u20132022), then OpenAI again (2023\u20132024). Founded **Eureka Labs** (AI education) in July 2024 and coined the term \"vibe coding\" in 2025. In **May 2026, he joined Anthropic**, leading a pretraining research team.\n\n**8. Durk Kingma \u2014 Research Scientist at Anthropic**\nLeft OpenAI in **2018** for Google Brain (later Google DeepMind), working on generative/text-to-image models. He **joined Anthropic in October 2024** and, per Wikipedia, \"currently [is] employed by Anthropic.\"\n\n**9. John Schulman \u2014 Chief Scientist at Thinking Machines Lab**\nLeft OpenAI in **August 2024** for **Anthropic** (2024\u20132025), then in **February 2025** joined **Thinking Machines Lab** (Mira Murati's startup) as **Chief Scientist**.\n\n**10. Pamela Vagata \u2014 (last known: founder of Pebblebed)** \u26a0\ufe0f *Least-documented; 2026 status unverified*\nBriefly at OpenAI, leaving in **2016** to become an AI tech lead at **Stripe**. She then **founded Pebblebed**, a venture capital firm specializing in early-stage AI investments (established 2021). **I was unable to confirm her 2026 role** with available sources.\n\n**11. Wojciech Zaremba \u2014 Continues at OpenAI**\nStill at OpenAI (2016\u2013present). Led robotics research, then oversaw GPT models, **GitHub Copilot**, and **Codex**. Described as Head of Language and Code Generation.\n\n---\n\n## Summary Table\n\n| Co-Founder | Current Affiliation (2026) | Status |\n|-----------|---------------------------|--------|\n| Sam Altman | **OpenAI** \u2014 CEO | Still at OpenAI |\n| Elon Musk | **Tesla, SpaceX, xAI, X** \u2014 CEO/Owner | Left OpenAI 2018 |\n| Ilya Sutskever | **Safe Superintelligence Inc.** \u2014 Co-founder & CEO | Left OpenAI 2024 |\n| Greg Brockman | **OpenAI** \u2014 President / CEO of Applications | Still at OpenAI |\n| Trevor Blackwell | **Y Combinator** (Founder, Retired) / **Anybots** | Left OpenAI 2017 |\n| Vicki Cheung | **Gantry** \u2014 co-founder (last known)* | Left OpenAI 2018 |\n| Andrej Karpathy | **Anthropic** (pretraining); Eureka Labs founder | Left OpenAI 2024 |\n| Durk Kingma | **Anthropic** \u2014 Research Scientist | Left OpenAI 2018 |\n| John Schulman | **Thinking Machines Lab** \u2014 Chief Scientist | Left OpenAI 2024 |\n| Pamela Vagata | **Pebblebed** \u2014 founder (last known)* | Left OpenAI 2016 |\n| Wojciech Zaremba | **OpenAI** \u2014 GPT/Codex lead | Still at OpenAI |\n\n**Total still at OpenAI: 3** (Altman, Brockman, Zaremba). The other 8 have departed.\n\n---\n\n## Note on Dario & Daniela Amodei\nFrequently surfaced in searches alongside the founders but **not part of the 11-person founding team** (they joined OpenAI in 2016). Current status:\n- **Dario Amodei** \u2014 Co-founder & **CEO of Anthropic** (left OpenAI 2021)\n- **Daniela Amodei** \u2014 Co-founder & **President of Anthropic** (left OpenAI 2021)\n\n(Also, **Josh Tobin** was an early OpenAI employee \u2014 not a founder \u2014 and co-founded Gantry with Vicki Cheung.)\n\n---\n\n## Research Caveat\nMy web-search tool returned limited/placeholder results for several very specific queries, so the **2026 roles of Vicki Cheung and Pamela Vagata could not be independently verified** \u2014 the information above reflects their **last confirmed public affiliations** (Gantry and Pebblebed, respectively). All other current affiliations were confirmed via Wikipedia, the Observer's 2024 founder profile, and Y Combinator's official people page.",
+    "timestamp": "2026-09-19T17:22:21.826390"
+  },
+  {
+    "metrics": {
+      "strategy": "context_aware_with_citations",
+      "success": false,
+      "iterations": 15,
+      "tool_calls": 64,
+      "context_overflows": 5,
+      "execution_time": 282.5722451210022,
+      "total_tokens": 914614,
+      "error": null,
+      "final_answer_length": 0,
+      "compression_ratio": 2.005,
+      "total_original_size": 23003,
+      "total_compressed_size": 46128
+    },
+    "final_answer": null,
+    "timestamp": "2026-09-19T17:27:06.502163"
+  },
+  {
+    "metrics": {
+      "strategy": "windowed_context",
+      "success": false,
+      "iterations": 15,
+      "tool_calls": 59,
+      "context_overflows": 1,
+      "execution_time": 263.37759590148926,
+      "total_tokens": 555830,
+      "error": null,
+      "final_answer_length": 0,
+      "compression_ratio": 1.38,
+      "total_original_size": 18640,
+      "total_compressed_size": 25728
+    },
+    "final_answer": null,
+    "timestamp": "2026-09-19T17:31:31.892989"
+  }
+]

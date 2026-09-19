@@ -1,0 +1,110 @@
+[
+  {
+    "metrics": {
+      "strategy": "no_compression",
+      "success": false,
+      "iterations": 12,
+      "tool_calls": 33,
+      "context_overflows": 1,
+      "execution_time": 136.70597791671753,
+      "total_tokens": 515698,
+      "error": "Context window exceeded - 104,121 tokens in last request (limit: 128000)",
+      "final_answer_length": 0,
+      "compression_ratio": 1.429,
+      "total_original_size": 11130,
+      "total_compressed_size": 15910
+    },
+    "final_answer": null,
+    "timestamp": "2026-09-19T18:53:03.708787"
+  },
+  {
+    "metrics": {
+      "strategy": "non_context_aware_individual_summary",
+      "success": true,
+      "iterations": 13,
+      "tool_calls": 33,
+      "context_overflows": 0,
+      "execution_time": 299.891628742218,
+      "total_tokens": 492336,
+      "error": null,
+      "final_answer_length": 3233,
+      "compression_ratio": 1.808,
+      "total_original_size": 17466,
+      "total_compressed_size": 31586
+    },
+    "final_answer": "I now have comprehensive information on all 11 OpenAI co-founders. Here is my final report:\n\n---\n\n# FINAL ANSWER: Current Affiliations of All OpenAI Co-Founders\n\n## Complete Founding Roster (December 2015)\nOpenAI was founded in December 2015 by **11 people** (with Musk and Altman as co-chairs): Elon Musk, Sam Altman, Ilya Sutskever, Greg Brockman, Trevor Blackwell, Vicki Cheung, Andrej Karpathy, Durk Kingma, John Schulman, Pamela Vagata, and Wojciech Zaremba.\n\n*(Note: Dario and Daniela Amodei were early employees, not co-founders \u2014 they left in 2021 to found Anthropic.)*\n\n## Current Status by Individual (as of September 2026)\n\n| # | Co-Founder | Current Affiliation & Role |\n|---|-----------|---------------------------|\n| 1 | **Sam Altman** | **Still at OpenAI** \u2014 CEO. Briefly ousted by the board in Nov 2023 but reinstated; led the 2025 restructuring into a PBC; IPO delayed to 2027 |\n| 2 | **Greg Brockman** | **Still at OpenAI** \u2014 President and CEO of Applications (Bret Taylor is now board chairman) |\n| 3 | **Wojciech Zaremba** | **Still at OpenAI** (2015\u2013present) \u2014 leads Language and Code Generation; previously led robotics, then GPT models, GitHub Copilot, and Codex |\n| 4 | **Elon Musk** | Left OpenAI's board in 2018. Now CEO of **Tesla** and **SpaceX**, owner of **X**, and founder of **xAI** (maker of Grok, merged with X). Sued OpenAI/Altman but **lost the case in May 2026** (statute of limitations) |\n| 5 | **Ilya Sutskever** | Left May 2024. Co-founded and is now **CEO of Safe Superintelligence Inc. (SSI)** \u2014 valued at $32B+, with a $5B Nvidia investment (July 2026). Net worth ~$13.8B |\n| 6 | **John Schulman** | Left OpenAI Aug 2024 \u2192 **Anthropic** (Aug 2024\u2013Feb 2025) \u2192 now **Chief Scientist at Thinking Machines Lab** (Mira Murati's startup, joined Feb 2025) |\n| 7 | **Andrej Karpathy** | Left OpenAI 2017 \u2192 Tesla \u2192 returned 2023\u201324 \u2192 founded **Eureka Labs** (AI education, 2024) \u2192 **joined Anthropic in May 2026**, leading a pretraining research team |\n| 8 | **Durk Kingma** | Left OpenAI 2018 \u2192 Google Brain \u2192 **Anthropic since Oct 2024** (research scientist, working remotely from the Netherlands) |\n| 9 | **Trevor Blackwell** | Left OpenAI ~2017; Y Combinator partner until ~2020. Last listed affiliations: **Y Combinator partner / Anybots founder** (roboticist, now based in England) |\n| 10 | **Vicki Cheung** | Left OpenAI 2018 \u2192 Lyft \u2192 co-founded **Gantry** (2020, ML model operations startup) with fellow OpenAI alum Josh Tobin |\n| 11 | **Pamela Vagata** | Left OpenAI 2016 \u2192 Stripe (AI tech lead) \u2192 founded **Pebblebed** (2021), an early-stage AI venture capital firm |\n\n## Summary\n- **Still at OpenAI (3):** Sam Altman, Greg Brockman, Wojciech Zaremba\n- **At rival AI labs (4):** Elon Musk (xAI), Andrej Karpathy & Durk Kingma (Anthropic), John Schulman (Thinking Machines Lab)\n- **Running their own startups (2):** Ilya Sutskever (Safe Superintelligence), Vicki Cheung (Gantry)\n- **Other ventures (2):** Pamela Vagata (Pebblebed VC), Trevor Blackwell (Y Combinator/robotics)\n\nThe founding team has dramatically dispersed: 8 of the 11 have left, and several now lead OpenAI's most direct competitors \u2014 a striking illustration of how OpenAI alumni shaped the entire competitive AI landscape.",
+    "timestamp": "2026-09-19T18:58:05.703003"
+  },
+  {
+    "metrics": {
+      "strategy": "non_context_aware_combined_summary",
+      "success": true,
+      "iterations": 11,
+      "tool_calls": 29,
+      "context_overflows": 0,
+      "execution_time": 355.98370885849,
+      "total_tokens": 391856,
+      "error": null,
+      "final_answer_length": 4991,
+      "compression_ratio": 3.288,
+      "total_original_size": 9892,
+      "total_compressed_size": 32520
+    },
+    "final_answer": "I now have comprehensive, verified information on all OpenAI co-founders. Let me compile the final report.\n\n---\n\n# FINAL ANSWER: Current Affiliations of OpenAI Co-Founders\n*As of September 19, 2026*\n\nOpenAI was founded in December 2015. While it is commonly described as having **six co-founders**, its full founding team comprised **11 people**. Below is the current status of everyone who co-founded OpenAI.\n\n## \ud83d\udd35 The Six Core Co-Founders\n\n### 1. Sam Altman \u2014 \u2705 Still at OpenAI\n- **Current: CEO of OpenAI** (since 2019). Survived the November 2023 board removal and won the *Musk v. Altman* trial in May 2026 (jury ruled Musk's claims were barred by the statute of limitations).\n- **Other roles:** Chairman of Helion Energy (fusion) and chairman of psychedelic pharma startup Journey Colab. Stepped down as Oklo chairman in April 2025 to avoid conflicts of interest. Co-founder of Tools For Humanity (Worldcoin).\n\n### 2. Greg Brockman \u2014 \u2705 Still at OpenAI\n- **Current: President of OpenAI**. Briefly resigned during the November 2023 board crisis, returned when Altman was reinstated; took a sabbatical (Aug\u2013Nov 2024) and returned to lead OpenAI's AI infrastructure/data center buildout (\"builder-in-chief\").\n- No longer on OpenAI's board (served as chairman 2017\u20132023).\n\n### 3. Wojciech Zaremba \u2014 \u2705 Still at OpenAI\n- **Current: Co-founder and technical lead (2016\u2013present)**. Originally led robotics (Rubik's Cube-solving arm), now leads teams behind GPT models, Codex, and GitHub Copilot.\n- Serves on advisory boards of Growbots and the Qualia Research Institute.\n\n### 4. Elon Musk \u2014 \u274c Departed (2018)\n- **Current: Founder of xAI (2023, maker of Grok); CEO of Tesla; CEO of SpaceX; owner of X (formerly Twitter).**\n- Left OpenAI's board in 2018 over conflicts of interest with Tesla. Sued OpenAI/Altman \u2014 **lost the trial in May 2026**.\n\n### 5. Ilya Sutskever \u2014 \u274c Departed (May 2024)\n- **Current: Co-founder & CEO of Safe Superintelligence Inc. (SSI)**, founded June 2024 with Daniel Gross and Daniel Levy (offices in Palo Alto and Tel Aviv).\n- **Recent change:** Became **CEO in July 2025** after co-founder Daniel Gross was poached by Meta; SSI rejected a Meta acquisition offer in June 2025 and is now valued at ~$32 billion, with Nvidia announcing a $5B investment in July 2026.\n\n### 6. John Schulman \u2014 \u274c Departed (August 2024)\n- **Current: Chief Scientist of Thinking Machines Lab** (Mira Murati's startup), since February 2025.\n- Path: OpenAI (2015\u20132024) \u2192 **Anthropic** (Aug 2024\u2013Feb 2025) \u2192 **Thinking Machines Lab**.\n\n## \u26aa The Other Five Founding Team Members (11 total)\n\n### 7. Andrej Karpathy \u2014 \u274c Departed (twice)\n- **Current: Anthropic** (joined May 19, 2026, leading pretraining research); also founder of AI-education startup **Eureka Labs** (July 2024).\n- Path: OpenAI (2015\u20132017) \u2192 Tesla AI Director (2017\u20132022) \u2192 OpenAI return (Feb 2023\u2013Feb 2024) \u2192 Eureka Labs \u2192 Anthropic.\n\n### 8. Durk Kingma \u2014 \u274c Departed (2018)\n- **Current: Anthropic** (joined October 2024), per his current Wikipedia listing.\n- Path: OpenAI co-founder (led Algorithms team) \u2192 Google Brain/DeepMind \u2192 Anthropic.\n\n### 9. Vicki Cheung \u2014 \u274c Departed (2018)\n- **Current: Fivetran**, following the acquisition of **Gantry**, the ML-monitoring startup she co-founded in 2020 with Josh Tobin.\n- Path: OpenAI founding engineer/head of infrastructure (2015\u20132018) \u2192 Lyft (2018\u20132020) \u2192 Gantry \u2192 Fivetran.\n\n### 10. Trevor Blackwell \u2014 \u274c Departed (2017)\n- **Most recent verified: Co-founder of Y Combinator** (partner until ~2020) and founder/former CEO of robotics company **Anybots**; now based in England.\n- His current day-to-day affiliation is the least clearly documented of the group.\n\n### 11. Pamela Vagata \u2014 \u274c Departed (2016)\n- **Current: Founder of Pebblebed** (est. 2021), an early-stage AI-focused venture capital firm.\n- Path: OpenAI founding member (infrastructure/early products) \u2192 Stripe AI tech lead \u2192 Pebblebed.\n\n## \ud83d\udcca Summary Tally\n\n| Current Affiliation | Founders |\n|---|---|\n| **OpenAI** | Sam Altman (CEO), Greg Brockman (President), Wojciech Zaremba |\n| **Anthropic** | Andrej Karpathy, Durk Kingma |\n| **Thinking Machines Lab** | John Schulman (Chief Scientist) |\n| **Safe Superintelligence (SSI)** | Ilya Sutskever (Co-founder & CEO) |\n| **xAI / Tesla / SpaceX / X** | Elon Musk |\n| **Fivetran** | Vicki Cheung |\n| **Pebblebed (VC)** | Pamela Vagata |\n| **Y Combinator / Anybots** | Trevor Blackwell |\n\n**Key takeaway:** Only **3 of the 11 founding members remain at OpenAI today** (down from 4 as recently as mid-2024). Of the eight who left, Anthropic has become the biggest landing spot (2 founders), while Musk (xAI), Sutskever (SSI), and Schulman (Thinking Machines Lab) are now direct competitors in the frontier AI race.\n\n*Note: A few searches returned unreliable placeholder results, so this report prioritizes primary biographical sources (Wikipedia pages retrieved today and the Observer's founding-team tracker); Trevor Blackwell's post-2020 status carries the lowest confidence.*",
+    "timestamp": "2026-09-19T19:04:03.778363"
+  },
+  {
+    "metrics": {
+      "strategy": "context_aware_summary",
+      "success": false,
+      "iterations": 15,
+      "tool_calls": 37,
+      "context_overflows": 2,
+      "execution_time": 451.90938568115234,
+      "total_tokens": 739651,
+      "error": null,
+      "final_answer_length": 0,
+      "compression_ratio": 4.072,
+      "total_original_size": 9611,
+      "total_compressed_size": 39133
+    },
+    "final_answer": null,
+    "timestamp": "2026-09-19T19:11:37.715866"
+  },
+  {
+    "metrics": {
+      "strategy": "context_aware_with_citations",
+      "success": true,
+      "iterations": 8,
+      "tool_calls": 21,
+      "context_overflows": 0,
+      "execution_time": 243.48740530014038,
+      "total_tokens": 194404,
+      "error": null,
+      "final_answer_length": 3575,
+      "compression_ratio": 3.28,
+      "total_original_size": 7198,
+      "total_compressed_size": 23607
+    },
+    "final_answer": "I now have comprehensive, current information on all the OpenAI co-founders. Here is my final report:\n\n---\n\n# FINAL ANSWER: Current Affiliations of All OpenAI Co-Founders\n*(As of September 19, 2026)*\n\nOpenAI was founded in December 2015. The company is commonly said to have **six core co-founders**, though its full founding team comprised **11 founding members**. Below is the current status of each.\n\n## The Six Core Co-Founders\n\n### 1. Sam Altman \u2014 \u2705 Still at OpenAI\n- **Current:** CEO of OpenAI (since 2019); one of only two founders still in a top leadership role\n- Recent 2026 highlights: Won the *Musk v. Altman* trial (jury ruled in his favor, May 2026); spoke at the G20 Innovation Ministerial (Sept 2, 2026)\n- **Other current roles:** Chairman of Helion Energy (fusion) and Journey Colab (psychedelic pharmaceuticals); stepped down as Oklo chairman in April 2025 over conflicts of interest\n\n### 2. Elon Musk \u2014 \u274c Departed (2018)\n- **Current:** CEO of Tesla; CEO of SpaceX; Owner of X (formerly Twitter); Founder/CEO of xAI (founded 2023, maker of Grok, now merged/holding company with X)\n- Recently **lost his lawsuit against OpenAI** \u2014 in May 2026 a jury rejected his claims (statute of limitations)\n\n### 3. Ilya Sutskever \u2014 \u274c Departed (May 2024)\n- **Current:** CEO and co-founder of **Safe Superintelligence Inc. (SSI)** (founded June 2024 with Daniel Gross and Daniel Levy)\n- Became **CEO of SSI in July 2025** after co-founder Gross left for Meta\n- SSI valued at ~$32B (2025); **Nvidia announced a $5B investment in July 2026**; SSI rejected a Meta buyout in June 2025\n\n### 4. Greg Brockman \u2014 \u2705 Still at OpenAI\n- **Current:** President of OpenAI (took a sabbatical Aug\u2013Nov 2024, then returned)\n- Now OpenAI's \"builder-in-chief\" driving its AI infrastructure/data center buildout (per Fortune, Nov 2025)\n- Net worth ~$25.5B (July 2026); prominent political donor to pro-AI-deregulation super PACs\n\n### 5. Wojciech Zaremba \u2014 \u2705 Still at OpenAI\n- **Current:** Co-founder and head of Language and Code Generation; leads teams on GPT models, GitHub Copilot, and Codex\n- No reports of departure; the longest-tenured quiet engineer of the founding team\n\n### 6. John Schulman \u2014 \u274c Departed (August 2024) \u2014 *most moved*\n- Career path: OpenAI (2015\u20132024) \u2192 **Anthropic** (Aug 2024\u2013Feb 2025) \u2192 **Thinking Machines Lab** (Feb 2025\u2013present)\n- **Current: Chief Scientist of Thinking Machines Lab** (Mira Murati's startup)\n\n## Remaining Founding Team Members (the broader \"11 founders\")\n\n| Name | Current Affiliation |\n|---|---|\n| **Trevor Blackwell** | Left OpenAI 2017; Y Combinator partner (hard tech, through 2020+) |\n| **Vicki Cheung** | Co-founder of **Gantry** (ML monitoring startup, since 2020) |\n| **Andrej Karpathy** | Founder of **Eureka Labs** (AI education company, since July 2024) |\n| **Durk Kingma** | Research scientist at **Google DeepMind** (last verified, mid-2024) |\n| **Pamela Vagata** | Founder of **Pebblebed** (early-stage AI VC firm, since 2021) |\n\n## Summary\n- **Still at OpenAI (3):** Sam Altman (CEO), Greg Brockman (President), Wojciech Zaremba\n- **Elsewhere in AI (3):** Elon Musk (xAI/Tesla/SpaceX/X), Ilya Sutskever (CEO of Safe Superintelligence), John Schulman (Chief Scientist, Thinking Machines Lab)\n- **Broader founding team:** entrepreneurs, investors, and researchers at YC, Gantry, Eureka Labs, Google DeepMind, and Pebblebed\n\n**Sources:** Wikipedia biographies of Schulman, Sutskever, Brockman, Altman, and Zaremba; Observer's \"Where are OpenAI's 11 Founding Members Today\"; Reuters, CNBC, WSJ, Forbes, and Bloomberg citations therein.",
+    "timestamp": "2026-09-19T19:15:43.233012"
+  },
+  {
+    "metrics": {
+      "strategy": "windowed_context",
+      "success": false,
+      "iterations": 15,
+      "tool_calls": 49,
+      "context_overflows": 1,
+      "execution_time": 481.3699104785919,
+      "total_tokens": 537364,
+      "error": null,
+      "final_answer_length": 0,
+      "compression_ratio": 1.36,
+      "total_original_size": 20737,
+      "total_compressed_size": 28201
+    },
+    "final_answer": null,
+    "timestamp": "2026-09-19T19:23:46.714630"
+  }
+]
