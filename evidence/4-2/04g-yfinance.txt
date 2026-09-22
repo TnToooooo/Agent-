@@ -1,0 +1,99 @@
+﻿python.exe : 调用工具 yfinance_quote ...
+At D:\agent study\ai-agent-book\chapter4\perception-tools\_agent_runs\run_all_20260922.ps1:35 char:12
++   $lines = & $py $s.a 2>&1
++            ~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (调用工具 yfinance_quote ...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+WARNING: Cookie fetch from fc.yahoo.com failed (Timeout), continuing without it
+WARNING: Cookie/crumb fetch failed (Timeout), continuing without crumb
+ERROR: Stock quote error: Traceback (most recent call last):
+  File "D:\agent study\ai-agent-book\chapter4\perception-tools\.venv\Lib\site-packages\curl_cffi\requests\sessi
+on.py", line 827, in _request_once
+    c.perform()
+    ~~~~~~~~~^^
+  File "D:\agent study\ai-agent-book\chapter4\perception-tools\.venv\Lib\site-packages\curl_cffi\curl.py", line
+ 594, in perform
+    self._check_error(ret, "perform")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "D:\agent study\ai-agent-book\chapter4\perception-tools\.venv\Lib\site-packages\curl_cffi\curl.py", line
+ 320, in _check_error
+    raise error
+curl_cffi.curl.CurlError: Failed to perform, curl: (28) Failed to connect to query2.finance.yahoo.com:443 after
+ 21356 ms: Could not connect to server. See https://curl.se/libcurl/c/libcurl-errors.html first for more detail
+s.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\agent study\ai-agent-book\chapter4\perception-tools\src\yahoo_finance_tools.py", line 52, in get_sto
+ck_quote
+    info = ticker.info
+           ^^^^^^^^^^^
+  File "D:\agent study\ai-agent-book\chapter4\perception-tools\.venv\Lib\site-packages\yfinance\ticker.py", lin
+e 159, in info
+    return self.get_info()
+           ~~~~~~~~~~~~~^^
+  File "D:\agent study\ai-agent-book\chapter4\perception-tools\.venv\Lib\site-packages\yfinance\base.py", line 
+282, in get_info
+    data = self._quote.info
+           ^^^^^^^^^^^^^^^^
+  File "D:\agent study\ai-agent-book\chapter4\perception-tools\.venv\Lib\site-packages\yfinance\scrapers\quote.
+py", line 526, in info
+    self._fetch_info()
+    ~~~~~~~~~~~~~~~~^^
+  File "D:\agent study\ai-agent-book\chapter4\perception-tools\.venv\Lib\site-packages\yfinance\scrapers\quote.
+py", line 684, in _fetch_info
+    result = self._fetch(modules=modules)
+  File "D:\agent study\ai-agent-book\chapter4\perception-tools\.venv\Lib\site-packages\yfinance\scrapers\quote.
+py", line 660, in _fetch
+    result = self._data.get_raw_json(_QUOTE_SUMMARY_URL_ + f"/{self._symbol}", params=params_dict)
+  File "D:\agent study\ai-agent-book\chapter4\perception-tools\.venv\Lib\site-packages\yfinance\data.py", line 
+517, in get_raw_json
+    response = self.get(url, params=params, timeout=timeout)
+  File "D:\agent study\ai-agent-book\chapter4\perception-tools\.venv\Lib\site-packages\yfinance\utils.py", line
+ 124, in wrapper
+    result = func(*args, **kwargs)
+  File "D:\agent study\ai-agent-book\chapter4\perception-tools\.venv\Lib\site-packages\yfinance\data.py", line 
+404, in get
+    response = self._make_request(url, request_method = self._session.get, params=params, timeout=timeout)
+  File "D:\agent study\ai-agent-book\chapter4\perception-tools\.venv\Lib\site-packages\yfinance\utils.py", line
+ 124, in wrapper
+    result = func(*args, **kwargs)
+  File "D:\agent study\ai-agent-book\chapter4\perception-tools\.venv\Lib\site-packages\yfinance\data.py", line 
+475, in _make_request
+    response = request_method(**request_args)
+  File "D:\agent study\ai-agent-book\chapter4\perception-tools\.venv\Lib\site-packages\curl_cffi\requests\sessi
+on.py", line 949, in get
+    return self.request(method="GET", url=url, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\agent study\ai-agent-book\chapter4\perception-tools\.venv\Lib\site-packages\curl_cffi\requests\sessi
+on.py", line 900, in request
+    return self._request_once(
+           ~~~~~~~~~~~~~~~~~~^
+        method=method,
+        ^^^^^^^^^^^^^^
+    ...<34 lines>...
+        discard_cookies=discard_cookies,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\agent study\ai-agent-book\chapter4\perception-tools\.venv\Lib\site-packages\curl_cffi\requests\sessi
+on.py", line 834, in _request_once
+    raise error(str(e), e.code, rsp) from e
+curl_cffi.requests.exceptions.Timeout: Failed to perform, curl: (28) Failed to connect to query2.finance.yahoo.
+com:443 after 21356 ms: Could not connect to server. See https://curl.se/libcurl/c/libcurl-errors.html first fo
+r more details.
+
+{
+  "success": false,
+  "message": "Failed to fetch stock quote: Failed to perform, curl: (28) Failed to connect to query2.finance.yahoo.com:443 after 21356 ms: Could not connect to server. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.",
+  "metadata": {
+    "symbol": "AAPL",
+    "operation": "get_stock_quote",
+    "execution_time": null,
+    "data_points": null,
+    "error_type": "Timeout",
+    "timestamp": "2026-09-22T17:48:12.216769"
+  }
+}

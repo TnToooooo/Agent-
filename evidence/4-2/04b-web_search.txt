@@ -1,0 +1,59 @@
+﻿python.exe : 调用工具 web_search ...
+At D:\agent study\ai-agent-book\chapter4\perception-tools\_agent_runs\run_all_20260922.ps1:35 char:12
++   $lines = & $py $s.a 2>&1
++            ~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (调用工具 web_search ...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+{
+  "success": true,
+  "message": {
+    "query": "AI+agent+tool+calling",
+    "results": [
+      {
+        "id": "ddg-0",
+        "title": "Tool Calling Explained: The Core of AI Agents (2026 Guide)",
+        "url": "https://composio.dev/content/ai-agent-tool-calling-guide",
+        "snippet": "Unlock the power of AI agents by understanding Tool Calling. This guide explains the core mechanism, from simple function calls to complex enterprise orchestration.",
+        "source": "duckduckgo"
+      },
+      {
+        "id": "ddg-1",
+        "title": "What is tool calling? - IBM",
+        "url": "https://www.ibm.com/think/topics/tool-calling",
+        "snippet": "Tool calling refers to the ability of artificial intelligence (AI) models to interact with external tools, application programming interfaces (APIs) or systems to enhance their functions. Instead of relying solely on pretrained knowledge, an AI system with tool-calling capabilities can query databases, fetch real-time information, execute functions or perform complex operations beyond its ...",
+        "source": "duckduckgo"
+      },
+      {
+        "id": "ddg-2",
+        "title": "The Roadmap to Mastering Tool Calling in AI Agents",
+        "url": "https://machinelearningmastery.com/the-roadmap-to-mastering-tool-calling-in-ai-agents/",
+        "snippet": "Learn how AI agents use tool calling to reliably interact with APIs, code, and external systems. Understand protocols, failure modes, scaling, and security.",
+        "source": "duckduckgo"
+      },
+      {
+        "id": "ddg-3",
+        "title": "Tool Calling, Explained: How AI Agents Decide What to Do Next",
+        "url": "https://towardsdatascience.com/tool-calling-explained-how-ai-agents-decide-what-to-do-next/",
+        "snippet": "Understanding how LLMs interact with the world around them, from returning data to taking action",
+        "source": "duckduckgo"
+      },
+      {
+        "id": "ddg-4",
+        "title": "Best AI for Tool Calling 2026 - Top Function Calling Models",
+        "url": "https://llm-stats.com/leaderboards/best-ai-for-tool-calling",
+        "snippet": "An AI agent is a model that can plan and execute multi-step tasks by calling tools, reading results, and deciding what to do next. Tool calling accuracy is the core capability that determines agent reliability.",
+        "source": "duckduckgo"
+      }
+    ],
+    "count": 5
+  },
+  "metadata": {
+    "query": "AI+agent+tool+calling",
+    "search_engine": "duckduckgo",
+    "total_results": 5,
+    "search_time": 1.1604275703430176,
+    "language": "en",
+    "country": "wt-wt"
+  }
+}

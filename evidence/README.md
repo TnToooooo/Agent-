@@ -45,9 +45,23 @@
 | `3-8/main_compare_console_20260919.txt` | ② 同题双模式完整答案（--no-verbose 重跑） | ③3.2 ② 质性表 |
 | `3-8/first_run_truncated_log_utf8.txt` | 首跑截断日志副本（控制台缓冲截断，保留前 3 轮轨迹） | 过程记录 |
 
+## 实验 4-2（perception-tools · 感知工具 MCP 十三步＋B 档最小 agent，2026-09-22）
+
+| 文件 | 内容 | 对应本子 |
+|---|---|---|
+| `4-2/01-smoke.txt` … `05-image_analyze.txt` ＋ `SUMMARY.txt` | 13 步代跑逐输出（冒烟／清单／离线 demo／9 个免 key 工具／视觉）——含 wikipedia、yfinance 两个网络阻断失败记录，如实保留 | task2.md ③ 主跑一表 |
+| `4-2/2-4B-min-agent.txt` | 2.4 B 档最小 MCP 客户端 agent 全过程：2 轮判断、3 tool_calls、0 错误、中文终答 | ③ 末节＋2.5 打卡素材 |
+
+## 实验 active-tool-selection（三策略工具暴露对比，2026-09-22）
+
+| 文件 | 内容 | 对应本子 |
+|---|---|---|
+| `active-tool-selection/ats-results-20260922.md` | ① offline 全 scaling 表、② compare（qwen-plus）、③ compare 400（离线＋在线 qwen-turbo）逐表转录（原始输出直出控制台） | task2.md ③ 主跑二全部表 |
+| `active-tool-selection/03-compare-400-receipt.txt` | ③ 首跑收据：离线 400 完整数据＋在线段 403 原始报错＋逐模型额度探针 | 过程存档 |
+
 ## 说明
 
-- **收录范围**：本人 2026-09-16（Task 0：1-1、1-4）与 2026-09-19（Task 1：2-10、3-8）的实跑证据。实验 1-2（等效路径）未落证据文件（`main.py` 未加 `--output`），实验 1-3 尚未运行，故均不在本目录。
+- **收录范围**：本人 2026-09-16（Task 0：1-1、1-4）、2026-09-19（Task 1：2-10、3-8）与 **2026-09-22（Task 2：4-2、active-tool-selection，agent 代跑经用户授权）** 的实跑证据。实验 1-2（等效路径）未落证据文件（`main.py` 未加 `--output`），实验 1-3 尚未运行，故均不在本目录。
 - **上游历史证据未收录**：`real_20260729…`、`real_20260825…`、`real_20260901…`、`probes_20260825T` 等为配套仓库自带的上游产物，不属于本人运行。
 - **不含任何密钥**：所有证据均记录 `credential_value_recorded: false`，只保留环境变量名（如 `DEEPSEEK_API_KEY`、`MINIMAX_CN_API_KEY`、`ZHIPU_API_KEY`）。
 - **校验方法**：`certutil -hashfile evidence.json SHA256`（Windows）或 `sha256sum evidence.json`（Linux/macOS），与同目录 `evidence.sha256` 的首段比对。

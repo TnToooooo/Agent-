@@ -1,0 +1,622 @@
+﻿python.exe : 调用工具 grep ...
+At D:\agent study\ai-agent-book\chapter4\perception-tools\_agent_runs\run_all_20260922.ps1:35 char:12
++   $lines = & $py $s.a 2>&1
++            ~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (调用工具 grep ...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+{
+  "success": true,
+  "message": {
+    "pattern": "async\\sdef",
+    "results": [
+      {
+        "file": "arxiv_enhanced.py",
+        "line_number": 24,
+        "line": "async def get_paper_details(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\arxiv_enhanced.py"
+      },
+      {
+        "file": "arxiv_enhanced.py",
+        "line_number": 90,
+        "line": "async def download_paper(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\arxiv_enhanced.py"
+      },
+      {
+        "file": "arxiv_enhanced.py",
+        "line_number": 175,
+        "line": "async def get_arxiv_categories() -> Union[str, TextContent]:",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\arxiv_enhanced.py"
+      },
+      {
+        "file": "document_processing_tools.py",
+        "line_number": 24,
+        "line": "async def extract_pdf_text(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\document_processing_tools.py"
+      },
+      {
+        "file": "document_processing_tools.py",
+        "line_number": 102,
+        "line": "async def extract_docx_content(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\document_processing_tools.py"
+      },
+      {
+        "file": "document_processing_tools.py",
+        "line_number": 175,
+        "line": "async def extract_pptx_content(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\document_processing_tools.py"
+      },
+      {
+        "file": "document_processing_tools.py",
+        "line_number": 249,
+        "line": "async def extract_csv_content(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\document_processing_tools.py"
+      },
+      {
+        "file": "expanded_catalog.py",
+        "line_number": 494,
+        "line": "async def _http_json(url: str, *, params: dict[str, Any] | None = None,",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\expanded_catalog.py"
+      },
+      {
+        "file": "expanded_catalog.py",
+        "line_number": 506,
+        "line": "async def _github(name: str, query: str, options: dict[str, Any]) -> Any:",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\expanded_catalog.py"
+      },
+      {
+        "file": "expanded_catalog.py",
+        "line_number": 535,
+        "line": "async def _finance(name: str, query: str, options: dict[str, Any]) -> Any:",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\expanded_catalog.py"
+      },
+      {
+        "file": "expanded_catalog.py",
+        "line_number": 586,
+        "line": "async def _web(name: str, query: str, options: dict[str, Any]) -> Any:",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\expanded_catalog.py"
+      },
+      {
+        "file": "expanded_catalog.py",
+        "line_number": 668,
+        "line": "async def _academic(name: str, query: str, options: dict[str, Any]) -> Any:",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\expanded_catalog.py"
+      },
+      {
+        "file": "expanded_catalog.py",
+        "line_number": 696,
+        "line": "async def _filesystem(name: str, query: str, options: dict[str, Any]) -> Any:",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\expanded_catalog.py"
+      },
+      {
+        "file": "expanded_catalog.py",
+        "line_number": 742,
+        "line": "async def _document(name: str, query: str, options: dict[str, Any]) -> Any:",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\expanded_catalog.py"
+      },
+      {
+        "file": "expanded_catalog.py",
+        "line_number": 789,
+        "line": "async def _media(name: str, query: str, options: dict[str, Any]) -> Any:",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\expanded_catalog.py"
+      },
+      {
+        "file": "expanded_catalog.py",
+        "line_number": 866,
+        "line": "async def _geo(name: str, query: str, options: dict[str, Any]) -> Any:",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\expanded_catalog.py"
+      },
+      {
+        "file": "expanded_catalog.py",
+        "line_number": 892,
+        "line": "async def _knowledge(name: str, query: str, options: dict[str, Any]) -> Any:",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\expanded_catalog.py"
+      },
+      {
+        "file": "expanded_catalog.py",
+        "line_number": 912,
+        "line": "async def _code(query: str, options: dict[str, Any]) -> Any:",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\expanded_catalog.py"
+      },
+      {
+        "file": "expanded_catalog.py",
+        "line_number": 927,
+        "line": "async def execute_expanded_tool(spec: ExpandedToolSpec, query: str,",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\expanded_catalog.py"
+      },
+      {
+        "file": "expanded_catalog.py",
+        "line_number": 965,
+        "line": "async def expanded_tool(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\expanded_catalog.py"
+      },
+      {
+        "file": "filesystem_tools.py",
+        "line_number": 163,
+        "line": "async def move_path(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\filesystem_tools.py"
+      },
+      {
+        "file": "filesystem_tools.py",
+        "line_number": 218,
+        "line": "async def copy_path(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\filesystem_tools.py"
+      },
+      {
+        "file": "filesystem_tools.py",
+        "line_number": 281,
+        "line": "async def delete_path(path: str) -> TextContent:",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\filesystem_tools.py"
+      },
+      {
+        "file": "filesystem_tools.py",
+        "line_number": 315,
+        "line": "async def read_file(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\filesystem_tools.py"
+      },
+      {
+        "file": "filesystem_tools.py",
+        "line_number": 382,
+        "line": "async def grep_search(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\filesystem_tools.py"
+      },
+      {
+        "file": "filesystem_tools.py",
+        "line_number": 508,
+        "line": "async def summarize_text(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\filesystem_tools.py"
+      },
+      {
+        "file": "google_search_enhanced.py",
+        "line_number": 22,
+        "line": "async def google_search_api(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\google_search_enhanced.py"
+      },
+      {
+        "file": "google_search_enhanced.py",
+        "line_number": 92,
+        "line": "async def _fallback_google_search(query: str, num_results: int) -> TextContent:",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\google_search_enhanced.py"
+      },
+      {
+        "file": "google_search_enhanced.py",
+        "line_number": 141,
+        "line": "async def read_webpage_content(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\google_search_enhanced.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 104,
+        "line": "async def web_search(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 114,
+        "line": "async def download(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 125,
+        "line": "async def knowledge_base_search(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 139,
+        "line": "async def webpage_reader(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 149,
+        "line": "async def document_reader(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 158,
+        "line": "async def image_parser(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 167,
+        "line": "async def video_parser(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 181,
+        "line": "async def file_reader(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 191,
+        "line": "async def grep(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 204,
+        "line": "async def text_summarizer(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 214,
+        "line": "async def filesystem_move(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 224,
+        "line": "async def filesystem_copy(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 234,
+        "line": "async def filesystem_delete(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 246,
+        "line": "async def weather(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 256,
+        "line": "async def stock_price(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 265,
+        "line": "async def currency_converter(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 275,
+        "line": "async def crypto_price(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 284,
+        "line": "async def location_search(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 294,
+        "line": "async def poi_search(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 311,
+        "line": "async def xquik_search_posts(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 325,
+        "line": "async def wikipedia_search(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 335,
+        "line": "async def arxiv_search(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 345,
+        "line": "async def wayback_search(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 359,
+        "line": "async def youtube_transcript(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 373,
+        "line": "async def pubchem_search(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 383,
+        "line": "async def pubchem_properties(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 392,
+        "line": "async def pubchem_synonyms(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 401,
+        "line": "async def pubchem_similar(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 415,
+        "line": "async def yfinance_quote(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 423,
+        "line": "async def yfinance_historical(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 435,
+        "line": "async def yfinance_company_info(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 443,
+        "line": "async def yfinance_financials(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 458,
+        "line": "async def pdf_extract(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 467,
+        "line": "async def docx_extract(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 475,
+        "line": "async def pptx_extract(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 483,
+        "line": "async def csv_parse(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 496,
+        "line": "async def audio_transcribe(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 506,
+        "line": "async def audio_metadata(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 514,
+        "line": "async def image_ocr(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 523,
+        "line": "async def image_analyze(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 532,
+        "line": "async def video_keyframes(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 541,
+        "line": "async def video_analyze(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 551,
+        "line": "async def audio_trim(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 562,
+        "line": "async def image_metadata(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 570,
+        "line": "async def youtube_download(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 584,
+        "line": "async def google_search_enhanced(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 596,
+        "line": "async def webpage_read_enhanced(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 609,
+        "line": "async def wiki_article_full(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 618,
+        "line": "async def wiki_article_categories(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 627,
+        "line": "async def wiki_article_links(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 636,
+        "line": "async def wiki_article_history(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 650,
+        "line": "async def arxiv_paper_details(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 658,
+        "line": "async def arxiv_download(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 667,
+        "line": "async def arxiv_categories():",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 677,
+        "line": "async def wayback_archived_content(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 690,
+        "line": "async def calendar_events(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "main.py",
+        "line_number": 701,
+        "line": "async def notion_search(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\main.py"
+      },
+      {
+        "file": "media_processing_tools.py",
+        "line_number": 113,
+        "line": "async def transcribe_audio_whisper(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\media_processing_tools.py"
+      },
+      {
+        "file": "media_processing_tools.py",
+        "line_number": 217,
+        "line": "async def extract_audio_metadata(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\media_processing_tools.py"
+      },
+      {
+        "file": "media_processing_tools.py",
+        "line_number": 295,
+        "line": "async def extract_text_ocr(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\media_processing_tools.py"
+      },
+      {
+        "file": "media_processing_tools.py",
+        "line_number": 363,
+        "line": "async def analyze_image_ai(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\media_processing_tools.py"
+      },
+      {
+        "file": "media_processing_tools.py",
+        "line_number": 461,
+        "line": "async def extract_video_keyframes(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\media_processing_tools.py"
+      },
+      {
+        "file": "media_processing_tools.py",
+        "line_number": 549,
+        "line": "async def analyze_video_ai(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\media_processing_tools.py"
+      },
+      {
+        "file": "media_processing_tools.py",
+        "line_number": 688,
+        "line": "async def trim_audio(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\media_processing_tools.py"
+      },
+      {
+        "file": "media_processing_tools.py",
+        "line_number": 768,
+        "line": "async def get_image_metadata(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\media_processing_tools.py"
+      },
+      {
+        "file": "multimodal_tools.py",
+        "line_number": 24,
+        "line": "async def read_webpage(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\multimodal_tools.py"
+      },
+      {
+        "file": "multimodal_tools.py",
+        "line_number": 133,
+        "line": "async def read_document(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\multimodal_tools.py"
+      },
+      {
+        "file": "multimodal_tools.py",
+        "line_number": 248,
+        "line": "async def parse_image(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\multimodal_tools.py"
+      },
+      {
+        "file": "multimodal_tools.py",
+        "line_number": 322,
+        "line": "async def parse_video(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\multimodal_tools.py"
+      },
+      {
+        "file": "multimodal_tools.py",
+        "line_number": 400,
+        "line": "async def download_youtube_video(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\multimodal_tools.py"
+      },
+      {
+        "file": "multimodal_tools.py",
+        "line_number": 473,
+        "line": "async def extract_youtube_transcript(",
+        "absolute_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src\\multimodal_tools.py"
+      }
+    ],
+    "total_found": 100,
+    "truncated": true
+  },
+  "metadata": {
+    "directory": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\src",
+    "file_pattern": "*.py",
+    "recursive": true
+  }
+}

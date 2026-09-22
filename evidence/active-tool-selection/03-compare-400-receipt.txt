@@ -1,0 +1,41 @@
+# ATS ③ --strategy compare --num-tools 400 运行收据（摘录自 2026-09-22 job pwsh-8 输出）
+
+## 离线段（完整通过）
+Catalog 400 tools, Retrieval top-k 5：
+- all-tools:        400 tools in context, 40,258 schema tokens, recall 100%
+- retrieval top-5:  5 tools in context,      522 schema tokens, recall 100%
+- => 省 98.7%（40,258 -> 522），10/10 任务 gold 全命中
+  （Monitor service 行的 retrieved 列表含 svc2_op* 合成干扰工具，仍命中 devops_monitor）
+- Scaling 表（--num-tools 400 视角）: 400 → all 40,258 / retrieval 522 / recall 100%
+
+## 在线段（崩溃）
+Model: qwen3.7-plus   Tasks: 10   Catalog: 400 tools   Retrieval top-k: 5
+[all-tools] running 10 tasks...
+[retrieval] running 10 tasks...
+[active (MCP-Zero)] running 10 tasks...
+→ openai.PermissionDeniedError: Error code: 403
+   'Free quota exhausted. To continue accessing the model on a paid basis,
+    please add funds or disable the "use free tier only" mode in the management console.'
+   type=AllocationQuota.FreeTierOnly
+   id=chatcmpl-4498a7c4-d8a2-9d9e-be89-fa85b042d5b9
+   栈: agent.py:150 _call_llm ← demo_comparison.py:353 run_online_benchmark
+
+## 额度池 1-token 探针（同日）
+- qwen3.7-plus   : 403 AllocationQuota.FreeTierOnly（耗尽）
+- qwen-plus      : OK
+- qwen-turbo     : OK
+- qwen3.7-flash  : OK
+- qwen-max       : OK
+- qwen-vl-max    : OK
+
+## 后续（用户 2026-09-22 决策）
+- 控制台关闭 qwen3.7-plus "仅免费额度"或充值 → agent 用 qwen3.7-plus 原样补跑在线段；
+- B 档最小 agent 先用 qwen3.7-flash 落地（同代小杯，笔记标注模型偏差）。
+
+## 额度战役终局（2026-09-22 晚，四死表生——补录）
+1. qwen3.7-plus 首跑：400 全量注入烧穿池子（40 万 token 级），403 死于 active 首任务。
+2. 控制台「免费额度用完即停」开关：用户操作后 9 分钟 3 探仍 403（位置/空间/数据分钟级刷新三坑，文档 help.aliyun.com/zh/model-studio/model-usage-statistics）。
+3. qwen3.7-flash 统一重跑：② 死于 active（前 20 任务烧穿 flash 池）；③ 秒死。全模型 1-token 实测：3.7 系双亡。
+4. qwen-plus 统一重跑：**② 成表** = all 90% / retrieval 80% / active 50%（10,352 / 1,747 / 6,579 tok；5.88 / 3.88 / 16.12s）；③ 死于 active 首任务（池尽 ~70 万 token 级）。
+5. qwen-turbo 新鲜池单跑 ③：**成表** = all 70% / retrieval 100% / active 50%（**68,326** / 1,677 / 1,646 tok；3.01 / 1.32 / 1.42s）。exit=0。
+结论：单一免费池撑不起 ②+③ 成对（约 75 万输入 token），只撑得起 ③ 单跑——最终口径②=qwen-plus、③=qwen-turbo，跨表模型不同已标注（token 爆炸与模型无关，准确率幅度含模型因素）。

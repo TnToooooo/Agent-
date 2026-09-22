@@ -1,0 +1,32 @@
+﻿python.exe : 调用工具 weather ...
+At D:\agent study\ai-agent-book\chapter4\perception-tools\_agent_runs\run_all_20260922.ps1:35 char:12
++   $lines = & $py $s.a 2>&1
++            ~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (调用工具 weather ...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+{
+  "success": true,
+  "message": {
+    "location": "Beijing",
+    "country": "China",
+    "latitude": 39.9075,
+    "longitude": 116.39723,
+    "temperature": 28.4,
+    "feels_like": 27.5,
+    "humidity": 40,
+    "precipitation": 0.0,
+    "weather_code": 1,
+    "description": "Mainly clear",
+    "wind_speed": 13.3,
+    "wind_direction": 203,
+    "units": "metric",
+    "timestamp": "2026-09-22T17:45",
+    "provider": "Open-Meteo"
+  },
+  "metadata": {
+    "location": "Beijing",
+    "provider": "Open-Meteo",
+    "api_key_required": false
+  }
+}

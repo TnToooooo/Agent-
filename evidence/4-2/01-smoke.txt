@@ -1,0 +1,11 @@
+﻿python.exe : 2026-09-22 17:46:15,378 - root - INFO - Starting Perception Tools MCP server!
+At D:\agent study\ai-agent-book\chapter4\perception-tools\_agent_runs\run_all_20260922.ps1:35 char:12
++   $lines = & $py $s.a 2>&1
++            ~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (2026-09-22 17:4...ols MCP server!:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+2026-09-22 17:46:15,470 - root - INFO - 📖 Reading file: D:\agent study\ai-agent-book\chapter4\perception-tools
+\requirements.txt
+2026-09-22 17:46:15,471 - root - INFO - ✅ Successfully read file (974 characters)
+MCP smoke test passed: sdk=2.2.0, protocol=2026-07-28, server=perception-tools, tools=127

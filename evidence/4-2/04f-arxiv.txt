@@ -1,0 +1,74 @@
+﻿python.exe : 调用工具 arxiv_search ...
+At D:\agent study\ai-agent-book\chapter4\perception-tools\_agent_runs\run_all_20260922.ps1:35 char:12
++   $lines = & $py $s.a 2>&1
++            ~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (调用工具 arxiv_search ...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+{
+  "success": true,
+  "message": {
+    "query": "large+language+model+agents",
+    "papers": [
+      {
+        "title": "Large Language Model Evaluation Via Multi AI Agents: Preliminary results",
+        "authors": [
+          "Zeeshan Rasheed",
+          "Muhammad Waseem",
+          "Kari Systä",
+          "Pekka Abrahamsson"
+        ],
+        "summary": "As Large Language Models (LLMs) have become integral to both research and daily operations, rigorous evaluation is crucial. This assessment is important not only for individual tasks but also for understanding their societal impact and potential risks. Despite extensive efforts to examine LLMs from various perspectives, there is a noticeable lack of multi-agent AI models specifically designed to evaluate the performance of different LLMs. To address this gap, we introduce a novel multi-agent AI ...",
+        "published": "2024-04-01T10:06:04+00:00",
+        "url": "http://arxiv.org/abs/2404.01023v1",
+        "pdf_url": "https://arxiv.org/pdf/2404.01023v1",
+        "categories": [
+          "cs.SE"
+        ]
+      },
+      {
+        "title": "Mobile-Agent: Autonomous Multi-Modal Mobile Device Agent with Visual Perception",
+        "authors": [
+          "Junyang Wang",
+          "Haiyang Xu",
+          "Jiabo Ye",
+          "Ming Yan",
+          "Weizhou Shen",
+          "Ji Zhang",
+          "Fei Huang",
+          "Jitao Sang"
+        ],
+        "summary": "Mobile device agent based on Multimodal Large Language Models (MLLM) is becoming a popular application. In this paper, we introduce Mobile-Agent, an autonomous multi-modal mobile device agent. Mobile-Agent first leverages visual perception tools to accurately identify and locate both the visual and textual elements within the app's front-end interface. Based on the perceived vision context, it then autonomously plans and decomposes the complex operation task, and navigates the mobile Apps throug...",
+        "published": "2024-01-29T13:46:37+00:00",
+        "url": "http://arxiv.org/abs/2401.16158v2",
+        "pdf_url": "https://arxiv.org/pdf/2401.16158v2",
+        "categories": [
+          "cs.CL",
+          "cs.CV"
+        ]
+      },
+      {
+        "title": "S-Agents: Self-organizing Agents in Open-ended Environments",
+        "authors": [
+          "Jiaqi Chen",
+          "Yuxian Jiang",
+          "Jiachen Lu",
+          "Li Zhang"
+        ],
+        "summary": "Leveraging large language models (LLMs), autonomous agents have significantly improved, gaining the ability to handle a variety of tasks. In open-ended settings, optimizing collaboration for efficiency and effectiveness demands flexible adjustments. Despite this, current research mainly emphasizes fixed, task-oriented workflows and overlooks agent-centric organizational structures. Drawing inspiration from human organizational behavior, we introduce a self-organizing agent system (S-Agents) with...",
+        "published": "2024-02-07T04:36:31+00:00",
+        "url": "http://arxiv.org/abs/2402.04578v4",
+        "pdf_url": "https://arxiv.org/pdf/2402.04578v4",
+        "categories": [
+          "cs.AI",
+          "cs.MA"
+        ]
+      }
+    ],
+    "count": 3
+  },
+  "metadata": {
+    "query": "large+language+model+agents",
+    "max_results": 3
+  }
+}

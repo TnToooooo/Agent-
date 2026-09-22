@@ -1,0 +1,31 @@
+﻿python.exe : 调用工具 image_analyze ...
+At line:1 char:268
++ ... '; $lines = & 'D:\agent study\ai-agent-book\chapter4\perception-tools ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (调用工具 image_analyze ...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+{
+  "success": true,
+  "message": {
+    "file_name": "ocr-source.png",
+    "prompt": "Describe this image in detail",
+    "analysis": "The image consists of a simple, clean text-based layout on a plain white background. The text is presented in a bold, sans-serif font, entirely in uppercase letters, and is black in color. It is centered horizontally within the frame.\n\nThere are two lines of text:\n\n1. The first line reads: **\"EXPERIMENT 4-1\"**  \n   This appears to be a label or identifier for a specific experiment, possibly part of a series (indicated by \"4-1\").\n\n2. The second line reads: **\"PERCEPTION TOOLS VERIFIED\"**  \n   This suggests that the purpose or outcome of Experiment 4-1 was to confirm or validate tools related to perception—possibly sensory, cognitive, or technological tools used in measuring or interpreting perception.\n\nThe overall design is minimalistic, with no additional graphics, icons, or decorative elements. The focus is solely on the textual message, which conveys a sense of completion or confirmation regarding an experimental procedure involving perception tools. The use of capital letters emphasizes clarity and formality, likely intended for a scientific, technical, or educational context.",
+    "model": "qwen-vl-max",
+    "provider_receipt": {
+      "provider": "dashscope",
+      "response_id": "chatcmpl-8b5c31be-c7db-9ae9-ae6c-abbd7adf1e31",
+      "response_model": "qwen-vl-max",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 433,
+        "completion_tokens": 227,
+        "total_tokens": 660
+      },
+      "latency_seconds": 5.846
+    }
+  },
+  "metadata": {
+    "file_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\validation\\experiment_4_2\\real_mcp_dashscope_intl_20260730T070000Z\\fixtures\\media\\ocr-source.png"
+  }
+}

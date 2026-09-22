@@ -1,0 +1,22 @@
+﻿python.exe : 调用工具 document_reader ...
+At D:\agent study\ai-agent-book\chapter4\perception-tools\_agent_runs\run_all_20260922.ps1:35 char:12
++   $lines = & $py $s.a 2>&1
++            ~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (调用工具 document_reader ...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+WARNING: incorrect startxref pointer(1)
+{
+  "success": true,
+  "message": {
+    "file_name": "sample.pdf",
+    "file_type": "pdf",
+    "page_count": 1,
+    "text": "Experiment 4-1 PDF PERCEPTION-EXPERIMENT-4-1-VERIFIED\n\n",
+    "text_length": 55
+  },
+  "metadata": {
+    "file_path": "D:\\agent study\\ai-agent-book\\chapter4\\perception-tools\\validation\\experiment_4_2\\real_mcp_dashscope_intl_20260730T070000Z\\fixtures\\documents\\sample.pdf",
+    "file_type": ".pdf"
+  }
+}
