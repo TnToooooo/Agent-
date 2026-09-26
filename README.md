@@ -14,18 +14,18 @@
 
 ## 学习计划
 
-- **周期**：2026-09-17 → 2026-10-05，共 19 天，每天约 5 小时
+- **周期**：2026-09-17 → 2026-10-06，共 20 天，每天约 5 小时（2026-09-26 通知：自 Task 2 起各截止顺延一天）
 - **共 7 个 Task**，每 3 天一个，**硬截止**（逾期报离群）
 
 | Task | 主题 | 截止 | 对应章节 | 笔记 |
 |:--:|---|---|---|---|
 | 0 | Agent 基础与环境准备 | 09-17 03:00 | 第 1 章 AI Agent 入门 | [task0.md](task0.md) |
 | 1 | 上下文工程与 Memory / RAG | 09-20 03:00 | 第 2–3 章 | [task1.md](task1.md) |
-| 2 | Tools 与 MCP | 09-23 03:00 | 第 4 章 工具 | [task2.md](task2.md) |
-| 3 | Coding Agent 与 Agent 交互 | 09-26 03:00 | 第 5–6 章 | [task3.md](task3.md) |
-| 4 | Agent Evaluation 与模型能力优化 | 09-29 03:00 | 第 7–8 章 | [task4.md](task4.md) |
-| 5 | Agent 持续进化与 Multi-Agent | 10-02 03:00 | 第 9–10 章 | [task5.md](task5.md) |
-| 6 | 共学总结 | 10-05 03:00 | 全书回顾 | [task6.md](task6.md) |
+| 2 | Tools 与 MCP | 09-24 03:00 | 第 4 章 工具 | [task2.md](task2.md) |
+| 3 | Coding Agent 与 Agent 交互 | 09-27 03:00 | 第 5–6 章 | [task3.md](task3.md) |
+| 4 | Agent Evaluation 与模型能力优化 | 09-30 03:00 | 第 7–8 章 | [task4.md](task4.md) |
+| 5 | Agent 持续进化与 Multi-Agent | 10-03 03:00 | 第 9–10 章 | [task5.md](task5.md) |
+| 6 | 共学总结 | 10-06 03:00 | 全书回顾 | [task6.md](task6.md) |
 
 > 页码口径：笔记中的 `p.N` 为 **PDF 物理页**；书内印刷页码 = PDF 页码 − 8。
 
