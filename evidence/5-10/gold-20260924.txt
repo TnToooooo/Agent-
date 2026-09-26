@@ -1,0 +1,180 @@
+======================================================================
+ERP Agent 实验 5-10  |  离线自检（内置 gold SQL）  |  离线（不调用 API）
+今天：2026-09-24  |  员工 40 人，工资记录 1193 条
+======================================================================
+
+【问题 1】平均每个员工在职多久？
+  生成的 SQL：
+    SELECT ROUND(AVG(
+             julianday(COALESCE(leave_date, date('now','localtime')))
+             - julianday(hire_date)
+           ), 2) AS avg_tenure_days
+    FROM employees;
+  查询结果：
+    | 886.20 |
+  校验：通过 ✓（结果一致）
+
+【问题 2】每个部门有多少在职员工？
+  生成的 SQL：
+    SELECT department, COUNT(*) AS active_count
+    FROM employees
+    WHERE leave_date IS NULL
+    GROUP BY department;
+  查询结果：
+    | 人力资源部 | 4 |
+    | 市场部 | 9 |
+    | 研发部 | 5 |
+    | 财务部 | 6 |
+    | 销售部 | 10 |
+  校验：通过 ✓（结果一致）
+
+【问题 3】哪个部门员工平均级别最高？
+  生成的 SQL：
+    SELECT department
+    FROM employees
+    GROUP BY department
+    ORDER BY AVG(level) DESC
+    LIMIT 1;
+  查询结果：
+    | 销售部 |
+  校验：通过 ✓（结果一致）
+
+【问题 4】每个部门今年和去年各新入职多少人？
+  生成的 SQL：
+    SELECT department,
+           SUM(CASE WHEN strftime('%Y', hire_date)
+                       = strftime('%Y','now','localtime')          THEN 1 ELSE 0 END) AS this_year,
+           SUM(CASE WHEN strftime('%Y', hire_date)
+                       = strftime('%Y','now','localtime','-1 year') THEN 1 ELSE 0 END) AS last_year
+    FROM employees
+    GROUP BY department
+    HAVING this_year > 0 OR last_year > 0;
+  查询结果：
+    | 人力资源部 | 2 | 1 |
+    | 市场部 | 1 | 3 |
+    | 研发部 | 1 | 2 |
+    | 财务部 | 0 | 1 |
+    | 销售部 | 2 | 1 |
+  校验：通过 ✓（结果一致）
+
+【问题 5】前年3月到去年5月，A部门平均工资是多少？
+  生成的 SQL：
+    SELECT ROUND(AVG(s.salary), 2) AS avg_salary
+    FROM salaries s
+    JOIN employees e ON e.emp_id = s.emp_id
+    WHERE e.department = '研发部'
+      AND strftime('%Y-%m', s.pay_date) BETWEEN
+            strftime('%Y-%m','now','localtime','start of year','-2 years','+2 months')
+        AND strftime('%Y-%m','now','localtime','start of year','-1 year','+4 months');
+  查询结果：
+    | 26753.33 |
+  校验：通过 ✓（结果一致）
+
+【问题 6】去年A部门和B部门平均工资哪个高？
+  生成的 SQL：
+    SELECT e.department, ROUND(AVG(s.salary), 2) AS avg_salary
+    FROM salaries s
+    JOIN employees e ON e.emp_id = s.emp_id
+    WHERE e.department IN ('研发部','销售部')
+      AND strftime('%Y', s.pay_date) = strftime('%Y','now','localtime','-1 year')
+    GROUP BY e.department;
+  查询结果：
+    | 研发部 | 28071.25 |
+    | 销售部 | 29179.60 |
+  校验：通过 ✓（结果一致）
+
+【问题 7】今年每个级别的员工平均工资是多少？
+  生成的 SQL：
+    SELECT e.level, ROUND(AVG(s.salary), 2) AS avg_salary
+    FROM salaries s
+    JOIN employees e ON e.emp_id = s.emp_id
+    WHERE strftime('%Y', s.pay_date) = strftime('%Y','now','localtime')
+    GROUP BY e.level;
+  查询结果：
+    | 3 | 22898.61 |
+    | 4 | 25605.80 |
+    | 5 | 30862.69 |
+    | 6 | 28917.31 |
+    | 7 | 29935.00 |
+    | 8 | 32405.31 |
+    | 9 | 34601.09 |
+  校验：通过 ✓（结果一致）
+
+【问题 8】入职一年内、一到两年、两到三年的员工，最近一个月平均工资是多少？
+  生成的 SQL：
+    WITH latest AS (          -- 每位员工「最近一个月」的工资
+      SELECT s.emp_id, s.salary
+      FROM salaries s
+      JOIN (SELECT emp_id, MAX(pay_date) AS mp FROM salaries GROUP BY emp_id) m
+        ON m.emp_id = s.emp_id AND m.mp = s.pay_date
+    ),
+    bucketed AS (             -- 给每位员工打上工龄档位
+      SELECT e.emp_id,
+             CASE
+               WHEN julianday(date('now','localtime')) - julianday(e.hire_date) < 365  THEN '入职一年内'
+               WHEN julianday(date('now','localtime')) - julianday(e.hire_date) < 730  THEN '一到两年'
+               WHEN julianday(date('now','localtime')) - julianday(e.hire_date) < 1095 THEN '两到三年'
+               ELSE NULL
+             END AS bucket
+      FROM employees e
+    )
+    SELECT b.bucket, ROUND(AVG(l.salary), 2) AS avg_salary
+    FROM bucketed b
+    JOIN latest l ON l.emp_id = b.emp_id
+    WHERE b.bucket IS NOT NULL
+    GROUP BY b.bucket;
+  查询结果：
+    | 一到两年 | 27576.88 |
+    | 两到三年 | 29481.88 |
+    | 入职一年内 | 23964.38 |
+  校验：通过 ✓（结果一致）
+
+【问题 9】去年到今年涨薪幅度最大的10位员工是谁？
+  生成的 SQL：
+    WITH ty AS (
+      SELECT emp_id, AVG(salary) AS a FROM salaries
+      WHERE strftime('%Y', pay_date) = strftime('%Y','now','localtime')          GROUP BY emp_id),
+    ly AS (
+      SELECT emp_id, AVG(salary) AS a FROM salaries
+      WHERE strftime('%Y', pay_date) = strftime('%Y','now','localtime','-1 year') GROUP BY emp_id)
+    SELECT e.name, ROUND(ty.a - ly.a, 2) AS raise_amt
+    FROM ty
+    JOIN ly ON ty.emp_id = ly.emp_id
+    JOIN employees e ON e.emp_id = ty.emp_id
+    ORDER BY raise_amt DESC
+    LIMIT 10;
+  查询结果：
+    | 韩平 | 12000.00 |
+    | 韩伟 | 2200.00 |
+    | 吕芳 | 2155.00 |
+    | 金丽 | 2110.00 |
+    | 许华 | 2065.00 |
+    | 陶松 | 1975.00 |
+    | 周雪 | 1930.00 |
+    | 吴敏 | 1885.00 |
+    | 张霞 | 1840.00 |
+    | 赵平 | 1795.00 |
+  校验：通过 ✓（结果一致）
+
+【问题 10】有没有拖欠工资的情况（某个月还在职却没有发薪）？
+  生成的 SQL：
+    WITH RECURSIVE em(emp_id, m, end_m) AS (
+      SELECT emp_id,
+             strftime('%Y-%m', hire_date),
+             COALESCE(strftime('%Y-%m', leave_date), strftime('%Y-%m','now','localtime'))
+      FROM employees
+      UNION ALL
+      SELECT emp_id, strftime('%Y-%m', date(m || '-01', '+1 month')), end_m
+      FROM em WHERE m < end_m)
+    SELECT em.emp_id, em.m
+    FROM em
+    LEFT JOIN salaries s
+           ON s.emp_id = em.emp_id AND strftime('%Y-%m', s.pay_date) = em.m
+    WHERE s.emp_id IS NULL;
+  查询结果：
+    | 17 | 2026-03 |
+  校验：通过 ✓（结果一致）
+
+======================================================================
+总通过率：10/10  (100%)
+======================================================================

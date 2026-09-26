@@ -1,0 +1,38 @@
+======================================================================
+ERP Agent 实验 5-10  |  在线（Agent 生成 SQL）  |  模型：qwen3.7-plus
+今天：2026-09-25  |  员工 40 人，工资记录 1192 条
+======================================================================
+
+【问题 1】平均每个员工在职多久？
+  [生成 SQL 失败] Error code: 403 - {'error': {'message': 'Free quota exhausted. To continue accessing the model on a paid basis, please add funds or disable the "use free tier only" mode in the management console.', 'type': 'AllocationQuota.FreeTierOnly', 'param': None, 'code': 'AllocationQuota.FreeTierOnly'}, 'id': 'chatcmpl-e71e3722-f8b3-9a85-8fd9-1cbfb4bd8198', 'request_id': 'e71e3722-f8b3-9a85-8fd9-1cbfb4bd8198'}
+
+【问题 2】每个部门有多少在职员工？
+  [生成 SQL 失败] Error code: 403 - {'error': {'message': 'Free quota exhausted. To continue accessing the model on a paid basis, please add funds or disable the "use free tier only" mode in the management console.', 'type': 'AllocationQuota.FreeTierOnly', 'param': None, 'code': 'AllocationQuota.FreeTierOnly'}, 'id': 'chatcmpl-353c3a83-c264-991b-b13b-66e5d38b80cf', 'request_id': '353c3a83-c264-991b-b13b-66e5d38b80cf'}
+
+【问题 3】哪个部门员工平均级别最高？
+  [生成 SQL 失败] Error code: 403 - {'error': {'message': 'Free quota exhausted. To continue accessing the model on a paid basis, please add funds or disable the "use free tier only" mode in the management console.', 'type': 'AllocationQuota.FreeTierOnly', 'param': None, 'code': 'AllocationQuota.FreeTierOnly'}, 'id': 'chatcmpl-dea4563e-abb8-9081-97bb-559fd78c9fe2', 'request_id': 'dea4563e-abb8-9081-97bb-559fd78c9fe2'}
+
+【问题 4】每个部门今年和去年各新入职多少人？
+  [生成 SQL 失败] Error code: 403 - {'error': {'message': 'Free quota exhausted. To continue accessing the model on a paid basis, please add funds or disable the "use free tier only" mode in the management console.', 'type': 'AllocationQuota.FreeTierOnly', 'param': None, 'code': 'AllocationQuota.FreeTierOnly'}, 'id': 'chatcmpl-516af117-8c20-9438-9c9c-5b132c8fd424', 'request_id': '516af117-8c20-9438-9c9c-5b132c8fd424'}
+
+【问题 5】前年3月到去年5月，A部门平均工资是多少？
+  [生成 SQL 失败] Error code: 403 - {'error': {'message': 'Free quota exhausted. To continue accessing the model on a paid basis, please add funds or disable the "use free tier only" mode in the management console.', 'type': 'AllocationQuota.FreeTierOnly', 'param': None, 'code': 'AllocationQuota.FreeTierOnly'}, 'id': 'chatcmpl-6d2345e8-a893-90cf-b53e-61b00f1b6768', 'request_id': '6d2345e8-a893-90cf-b53e-61b00f1b6768'}
+
+【问题 6】去年A部门和B部门平均工资哪个高？
+  [生成 SQL 失败] Error code: 403 - {'error': {'message': 'Free quota exhausted. To continue accessing the model on a paid basis, please add funds or disable the "use free tier only" mode in the management console.', 'type': 'AllocationQuota.FreeTierOnly', 'param': None, 'code': 'AllocationQuota.FreeTierOnly'}, 'id': 'chatcmpl-a3a748c2-6f1e-9872-85e4-467ceb516ce1', 'request_id': 'a3a748c2-6f1e-9872-85e4-467ceb516ce1'}
+
+【问题 7】今年每个级别的员工平均工资是多少？
+  [生成 SQL 失败] Error code: 403 - {'error': {'message': 'Free quota exhausted. To continue accessing the model on a paid basis, please add funds or disable the "use free tier only" mode in the management console.', 'type': 'AllocationQuota.FreeTierOnly', 'param': None, 'code': 'AllocationQuota.FreeTierOnly'}, 'id': 'chatcmpl-8ea83842-a589-9686-aad3-1904c4b9dcee', 'request_id': '8ea83842-a589-9686-aad3-1904c4b9dcee'}
+
+【问题 8】入职一年内、一到两年、两到三年的员工，最近一个月平均工资是多少？
+  [生成 SQL 失败] Error code: 403 - {'error': {'message': 'Free quota exhausted. To continue accessing the model on a paid basis, please add funds or disable the "use free tier only" mode in the management console.', 'type': 'AllocationQuota.FreeTierOnly', 'param': None, 'code': 'AllocationQuota.FreeTierOnly'}, 'id': 'chatcmpl-3bf71d6d-c0e4-9377-b606-8f3c3c129e3f', 'request_id': '3bf71d6d-c0e4-9377-b606-8f3c3c129e3f'}
+
+【问题 9】去年到今年涨薪幅度最大的10位员工是谁？
+  [生成 SQL 失败] Error code: 403 - {'error': {'message': 'Free quota exhausted. To continue accessing the model on a paid basis, please add funds or disable the "use free tier only" mode in the management console.', 'type': 'AllocationQuota.FreeTierOnly', 'param': None, 'code': 'AllocationQuota.FreeTierOnly'}, 'id': 'chatcmpl-9a0ef625-18e5-9941-98be-d466f3e5abea', 'request_id': '9a0ef625-18e5-9941-98be-d466f3e5abea'}
+
+【问题 10】有没有拖欠工资的情况（某个月还在职却没有发薪）？
+  [生成 SQL 失败] Error code: 403 - {'error': {'message': 'Free quota exhausted. To continue accessing the model on a paid basis, please add funds or disable the "use free tier only" mode in the management console.', 'type': 'AllocationQuota.FreeTierOnly', 'param': None, 'code': 'AllocationQuota.FreeTierOnly'}, 'id': 'chatcmpl-0ce98f88-0ff8-989f-848f-118424a8be86', 'request_id': '0ce98f88-0ff8-989f-848f-118424a8be86'}
+
+======================================================================
+总通过率：0/10  (0%)
+======================================================================

@@ -59,9 +59,27 @@
 | `active-tool-selection/ats-results-20260922.md` | ① offline 全 scaling 表、② compare（qwen-plus）、③ compare 400（离线＋在线 qwen-turbo）逐表转录（原始输出直出控制台） | task2.md ③ 主跑二全部表 |
 | `active-tool-selection/03-compare-400-receipt.txt` | ③ 首跑收据：离线 400 完整数据＋在线段 403 原始报错＋逐模型额度探针 | 过程存档 |
 
+## 实验 5-10（erp-agent · NL→SQL，Artifact 模式，2026-09-25）
+
+| 文件 | 内容 | 对应本子 |
+|---|---|---|
+| `5-10/gold-20260924.txt` | 离线金标自检（10 条人工 SQL＋独立参照判分）**10/10** | task3.md ③3.1 第 1 行 |
+| `5-10/run-online-deepseek-20260925.txt` | 在线真跑（deepseek-v4-flash）**9/10**，Q1 时区口径失手逐题在内 | ③3.1 第 2 行＋Q1 剖析 |
+| `5-10/run-online-20260924.txt`、`run-online-flash-20260925.txt` | 百炼 403 `FreeTierOnly` 双收据（模型改线依据） | ③3.1 模型切换链 |
+
+## 实验 6-2（async-agent · Flux 异步框架，2026-09-25）
+
+| 文件 | 内容 | 对应本子 |
+|---|---|---|
+| `6-2/offline-demos-20260925b.txt` | 三演示全绿：并行加速比 **3.00×**（4.50s→1.50s）／打断冻结 33%/22%/11%＋恢复／检查点跨会话一致 | task3.md ③3.2 表 |
+| `6-2/real-experiment-20260925b.txt`、`6-2/validation-receipts/` | `run_real_experiment --tick-real 0.15` exit=0 与全套收据（manifest／protocol／summary／4 场景 JSON／2 artifacts） | ③3.2 证据级条目 |
+| `6-2/scenarios-all-20260925.txt` | 四个 LLM 场景全过（即时提问／批量收尾 HTML＋日语／取消杀进程／竞速阈值取消） | ③3.2 四场景逐条 |
+
+> 两目录内各附 `README.md`（收录范围＋复跑方式＋密钥说明）与 `SHA256SUMS.txt`（全目录自校验）。
+
 ## 说明
 
-- **收录范围**：本人 2026-09-16（Task 0：1-1、1-4）、2026-09-19（Task 1：2-10、3-8）与 **2026-09-22（Task 2：4-2、active-tool-selection，agent 代跑经用户授权）** 的实跑证据。实验 1-2（等效路径）未落证据文件（`main.py` 未加 `--output`），实验 1-3 尚未运行，故均不在本目录。
+- **收录范围**：本人 2026-09-16（Task 0：1-1、1-4）、2026-09-19（Task 1：2-10、3-8）、**2026-09-22（Task 2：4-2、active-tool-selection，agent 代跑经用户授权）** 与 **2026-09-25（Task 3：5-10、6-2，agent 代跑经用户授权）** 的实跑证据。实验 1-2（等效路径）未落证据文件（`main.py` 未加 `--output`），实验 1-3 尚未运行，故均不在本目录。
 - **上游历史证据未收录**：`real_20260729…`、`real_20260825…`、`real_20260901…`、`probes_20260825T` 等为配套仓库自带的上游产物，不属于本人运行。
-- **不含任何密钥**：所有证据均记录 `credential_value_recorded: false`，只保留环境变量名（如 `DEEPSEEK_API_KEY`、`MINIMAX_CN_API_KEY`、`ZHIPU_API_KEY`）。
+- **不含任何密钥**：Task 0–1 的 JSON 证据记录 `credential_value_recorded: false`；Task 2–3 的文本证据逐目录双模式扫描（`sk-` 前缀／`KEY=` 实值）零命中；全部只保留环境变量名（如 `DEEPSEEK_API_KEY`、`OPENAI_API_KEY`、`ZHIPU_API_KEY`）。
 - **校验方法**：`certutil -hashfile evidence.json SHA256`（Windows）或 `sha256sum evidence.json`（Linux/macOS），与同目录 `evidence.sha256` 的首段比对。

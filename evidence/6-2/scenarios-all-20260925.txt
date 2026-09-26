@@ -1,0 +1,323 @@
+使用模型：deepseek-v4-flash
+
+==============================================================================
+  场景 1｜异步工具执行：长任务运行期间即时回应插入的提问
+==============================================================================
+[  0.00s] [96mUSER  [0m | (immediate) 请运行终端命令 `python analyze_logs.py`（这是耗时的日志分析），完成后给我分析结论。
+[  0.00s] [94mTRAJ  [0m | + user.input         用户消息（immediate）：请运行终端命令 `python analyze_logs.py`（这是耗时的日志分析），完成后给我分析结论。
+[  2.20s] [96mUSER  [0m | (immediate) 现在几点了？
+[  2.26s] [90mSYSTEM[0m | LLM 调用耗时 2.26s（2 条消息）
+[  2.26s] [94mTRAJ  [0m | + agent.tool_call    调用工具 run_terminal_command
+[  2.26s] [92mAGENT [0m | 好的，我这就把日志分析任务放到后台运行。
+[  2.26s] [95mTASK  [0m | 启动真实子进程任务 T1: `python analyze_logs.py` (速度 4%/逻辑秒)
+[  2.26s] [94mTRAJ  [0m | + tool.result        工具结果 run_terminal_command
+[  2.88s] [90mSYSTEM[0m | LLM 调用耗时 0.62s（4 条消息）
+[  2.88s] [94mTRAJ  [0m | + agent.output       回复用户
+[  2.88s] [92mAGENT [0m | 任务已在后台启动（task_id=T1）。它是耗时任务，我不会空等——等它真正跑完后，我会基于输出哈希和文件分析指标给你结论。你也可以随时让我查进度或取消。
+[  2.88s] [94mTRAJ  [0m | + user.input         用户消息（immediate）：现在几点了？
+[  3.45s] [90mSYSTEM[0m | LLM 调用耗时 0.57s（6 条消息）
+[  3.45s] [94mTRAJ  [0m | + agent.tool_call    调用工具 get_current_time
+[  3.45s] [93mTOOL  [0m | get_current_time -> 2026-09-25 00:23:04
+[  3.45s] [94mTRAJ  [0m | + tool.result        工具结果 get_current_time
+[  4.03s] [90mSYSTEM[0m | LLM 调用耗时 0.58s（8 条消息）
+[  4.03s] [94mTRAJ  [0m | + agent.output       回复用户
+[  4.03s] [92mAGENT [0m | 现在是 2026-09-25 00:23:04。
+
+日志分析任务 T1 仍在后台运行，完成后我会第一时间给你结论。
+[  4.47s] [95mTASK  [0m | T1 `python analyze_logs.py` 进度 22% (pid=12896)
+[  6.08s] [95mTASK  [0m | T1 `python analyze_logs.py` 进度 40% (pid=12896)
+[  8.08s] [95mTASK  [0m | T1 `python analyze_logs.py` 进度 63% (pid=12896)
+[  9.68s] [95mTASK  [0m | T1 `python analyze_logs.py` 进度 81% (pid=12896)
+[ 11.68s] [95mTASK  [0m | T1 `python analyze_logs.py` 进度 100% (pid=12896)
+[ 11.71s] [95mTASK  [0m | T1 完成 ✅ (pid=12896, returncode=0)
+[ 11.71s] [94mTRAJ  [0m | + async.result       异步完成 T1
+[ 14.65s] [90mSYSTEM[0m | LLM 调用耗时 2.94s（10 条消息）
+[ 14.65s] [94mTRAJ  [0m | + agent.output       回复用户
+[ 14.65s] [92mAGENT [0m | 任务 T1 已完成（返回码正常，结果以指标形式返回）。下面是结论：
+
+**处理对象**
+- 输入文件：`D:\agent study\ai-agent-book\book\chapter4.md`
+- 大小：69,415 字节，共 448 行
+- 输入 SHA-256：`fbb0eee9...d13f1f6287a`（可用于校验同一版本，避免重复分析或结果被篡改）
+- 输出不落盘，只回传以下统计指标，因此可复核性依赖该哈希。
+
+**指标解读**
+| 指标 | 值 | 含义 |
+|---|---|---|
+| heading_count | 20 | 20 个标题，对 448 行的章节来说结构层级较丰富，属于章节标题 + 小节标题的典型分布 |
+| error_keyword_count | 19 | 出现 19 处错误类关键词。这是**文本提及次数，不是真实错误数** |
+| async_mentions | 10 | "async/异步" 出现 10 次 |
+| experiment_mentions | 18 | "experiment/实验" 出现 18 次 |
+| lines | 448 | 总行数 |
+
+**需要注意的两点**
+1. **任务名与实际内容不匹配**：job 标记为 `logs`，但输入是一个 Markdown 书稿章节（chapter4.md），并非日志文件。所以 `error_keyword_count=19` 应当理解为"第 4 章正文里谈到错误的次数"，而不是运行期故障计数——不要把它当成故障率来汇报。
+2. 该指标集**不含**时间分布、错误类型分类、去重后的唯一错误模式，也没有按标题聚合的分布。如果目标是定位"哪一节问题最多"，现有输出不足以支撑，需要补充按段落/标题分桶的统计。
+
+**结论一句话**：分析成功完成，第 4 章共 448 行、20 个标题，其中 19 处提到错误、10 处提到异步、18 处提到实验；但这些是文本计数而非真实日志错误，若要得出运维层面的判断，需要重新以真正的日志文件为输入并追加分类统计。
+
+需要我按标题分桶重跑，或对 chapter4.md 之外的日志文件再跑一次吗？
+
+==============================================================================
+  场景 2｜事件队列与批量处理：非紧急指令累积，任务完成时一次性处理
+==============================================================================
+[  0.00s] [96mUSER  [0m | (immediate) 请运行终端命令 `python analyze_logs.py`（耗时日志分析），完成后把分析结论告诉我。
+[  0.00s] [94mTRAJ  [0m | + user.input         用户消息（immediate）：请运行终端命令 `python analyze_logs.py`（耗时日志分析），完成后把分析结论告诉我。
+[  0.76s] [90mSYSTEM[0m | LLM 调用耗时 0.76s（2 条消息）
+[  0.76s] [94mTRAJ  [0m | + agent.tool_call    调用工具 run_terminal_command
+[  0.77s] [95mTASK  [0m | 启动真实子进程任务 T1: `python analyze_logs.py` (速度 4%/逻辑秒)
+[  0.77s] [94mTRAJ  [0m | + tool.result        工具结果 run_terminal_command
+[  1.50s] [96mUSER  [0m | (deferred) 记得最后用日语回复
+[  1.50s] [90mSYSTEM[0m | 事件进入排队缓冲（当前积压 1 条）
+[  1.66s] [90mSYSTEM[0m | LLM 调用耗时 0.89s（4 条消息）
+[  1.66s] [94mTRAJ  [0m | + agent.output       回复用户
+[  1.66s] [92mAGENT [0m | 已在后台启动日志分析任务：**task_id = T1**（`python analyze_logs.py`）。
+
+它不会阻塞，我会在任务完成后基于结果给你分析结论。期间如需查询进度可用 `query_task('T1')`，需要中止可用 `cancel_task('T1')`，你随时告诉我即可。
+[  1.90s] [96mUSER  [0m | (deferred) 把结果整理成一个网页(HTML)
+[  1.90s] [90mSYSTEM[0m | 事件进入排队缓冲（当前积压 2 条）
+[  2.95s] [95mTASK  [0m | T1 `python analyze_logs.py` 进度 22% (pid=12588)
+[  4.55s] [95mTASK  [0m | T1 `python analyze_logs.py` 进度 40% (pid=12588)
+[  6.56s] [95mTASK  [0m | T1 `python analyze_logs.py` 进度 63% (pid=12588)
+[  8.16s] [95mTASK  [0m | T1 `python analyze_logs.py` 进度 81% (pid=12588)
+[ 10.16s] [95mTASK  [0m | T1 `python analyze_logs.py` 进度 100% (pid=12588)
+[ 10.19s] [95mTASK  [0m | T1 完成 ✅ (pid=12588, returncode=0)
+[ 10.19s] [90mSYSTEM[0m | 异步结果到达，批量处理 2 条积压的非紧急事件
+[ 10.19s] [94mTRAJ  [0m | + async.result       异步完成 T1
+[ 10.19s] [94mTRAJ  [0m | + user.input         用户消息（deferred）：记得最后用日语回复
+[ 10.19s] [94mTRAJ  [0m | + user.input         用户消息（deferred）：把结果整理成一个网页(HTML)
+[ 17.89s] [90mSYSTEM[0m | LLM 调用耗时 7.69s（8 条消息）
+[ 17.89s] [94mTRAJ  [0m | + agent.output       回复用户
+[ 17.89s] [92mAGENT [0m | 分析已完成（T1 正常结束），结果整理如下网页。
+
+```html
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>日志分析报告 · chapter4.md</title>
+<style>
+  :root{
+    --bg:#0f1729; --card:#16203a; --line:#27324f;
+    --txt:#e8edf7; --dim:#93a1bf; --accent:#4da3ff; --ok:#3ddc97;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; padding:40px 20px; background:var(--bg); color:var(--txt);
+    font-family:-apple-system,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;
+    line-height:1.7;
+  }
+  .wrap{max-width:920px;margin:0 auto}
+  header{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:28px}
+  h1{margin:0 0 8px;font-size:26px}
+  .sub{color:var(--dim);font-size:13px}
+  .badge{
+    display:inline-block;background:rgba(61,220,151,.12);color:var(--ok);
+    border:1px solid rgba(61,220,151,.35);border-radius:999px;
+    padding:2px 12px;font-size:12px;margin-left:8px
+  }
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:28px}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:16px 18px
+  }
+  .card .k{color:var(--dim);font-size:12px;letter-spacing:.04em}
+  .card .v{font-size:26px;font-weight:600;margin-top:6px;color:var(--accent)}
+  table{width:100%;border-collapse:collapse;background:var(--card);
+    border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:28px}
+  th,td{padding:11px 16px;text-align:left;font-size:14px;border-bottom:1px solid var(--line)}
+  th{background:rgba(77,163,255,.08);color:var(--dim);font-weight:600;font-size:13px}
+  tr:last-child td{border-bottom:none}
+  td.num{text-align:right;font-variant-numeric:tabular-nums;color:var(--accent);font-weight:600}
+  code{background:rgba(255,255,255,.06);padding:2px 6px;border-radius:5px;font-size:12.5px;word-break:break-all}
+  h2{font-size:17px;margin:0 0 12px}
+  ul{margin:0;padding-left:20px}
+  li{margin:6px 0}
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);color:var(--dim);font-size:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>日志分析报告<span class="badge">已完成</span></h1>
+    <div class="sub">任务 ID：T1 &nbsp;·&nbsp; 命令：<code>python analyze_logs.py</code> &nbsp;·&nbsp; job：logs</div>
+  </header>
+
+  <div class="cards">
+    <div class="card"><div class="k">总行数</div><div class="v">448</div></div>
+    <div class="card"><div class="k">文件大小 (bytes)</div><div class="v">69,415</div></div>
+    <div class="card"><div class="k">错误关键词命中</div><div class="v">19</div></div>
+    <div class="card"><div class="k">标题数 (headings)</div><div class="v">20</div></div>
+    <div class="card"><div class="k">异步相关提及</div><div class="v">10</div></div>
+    <div class="card"><div class="k">实验相关提及</div><div class="v">18</div></div>
+  </div>
+
+  <h2>指标明细</h2>
+  <table>
+    <thead><tr><th>指标</th><th>含义</th><th style="text-align:right">数值</th></tr></thead>
+    <tbody>
+      <tr><td>lines</td><td>文件总行数</td><td class="num">448</td></tr>
+      <tr><td>bytes</td><td>文件字节数</td><td class="num">69,415</td></tr>
+      <tr><td>heading_count</td><td>Markdown / 日志标题数量</td><td class="num">20</td></tr>
+      <tr><td>error_keyword_count</td><td>error 类关键词出现次数</td><td class="num">19</td></tr>
+      <tr><td>async_mentions</td><td>“异步”相关内容提及次数</td><td class="num">10</td></tr>
+      <tr><td>experiment_mentions</td><td>“实验”相关内容提及次数</td><td class="num">18</td></tr>
+    </tbody>
+  </table>
+
+  <h2>文件与校验</h2>
+  <table>
+    <tbody>
+      <tr><td>input_path</td><td><code>D:\agent study\ai-agent-book\book\chapter4.md</code></td></tr>
+      <tr><td>input_sha256</td><td><code>fbb0eee9792c2a0632ba5df5ecb0b43d70ede739be679ac10b657d13f1f6287a</code></td></tr>
+    </tbody>
+  </table>
+
+  <h2>结论要点</h2>
+  <ul>
+    <li>分析对象为 <strong>chapter4.md</strong>，共 <strong>448 行 / 69,415 字节</strong>，规模中等，结构清晰（20 个标题）。</li>
+    <li><strong>error 关键词命中 19 次</strong>：远低于行数，属于“计数而非告警”级别，未出现错误聚集，暂无明显异常模式。</li>
+    <li><strong>“异步”提及 10 次、“实验”提及 18 次</strong>：说明该章节讨论重心偏向<strong>实验/异步机制</strong>，与 Flux 异步 Agent 的主题一致。</li>
+    <li>校验哈希已记录，可用于后续版本比对，确认内容未被篡改。</li>
+  </ul>
+
+  <footer>生成时间：分析任务 T1 完成时刻 · 数据来源：analyze_logs.py 真实执行输出</footer>
+</div>
+</body>
+</html>
+```
+
+要点：结果已按「概览卡片 → 指标明细 → 文件校验 → 结论」四段式组织，可直接存为 `report.html` 打开；所有数值均取自 T1 的真实返回，未做推断性修改。
+
+---
+
+**【日本語】まとめ**
+
+ログ解析タスク T1（`python analyze_logs.py`）は正常に完了しました。対象は `chapter4.md` で、全 448 行・69,415 バイト、見出しは 20 個です。エラー系キーワードの検出は 19 件と少なく、異常の集中は見られません。「非同期」10 件・「実験」18 件の言及があり、本チャプターは非同期エージェントの実験的解説が中心だと判断できます。ファイルの SHA-256 も記録済みのため、以後の版比較に利用可能です。上記の HTML をそのまま保存すれば、レポートとして閲覧できます。
+
+==============================================================================
+  场景 3｜打断机制：用户'取消'立即终止执行流并取消异步工具
+==============================================================================
+[  0.00s] [96mUSER  [0m | (immediate) 请运行终端命令 `python analyze_logs.py`（耗时日志分析），完成后给我结论。
+[  0.00s] [94mTRAJ  [0m | + user.input         用户消息（immediate）：请运行终端命令 `python analyze_logs.py`（耗时日志分析），完成后给我结论。
+[  0.54s] [90mSYSTEM[0m | LLM 调用耗时 0.54s（2 条消息）
+[  0.54s] [94mTRAJ  [0m | + agent.tool_call    调用工具 run_terminal_command
+[  0.54s] [92mAGENT [0m | 我来启动这个日志分析任务。
+[  0.55s] [95mTASK  [0m | 启动真实子进程任务 T1: `python analyze_logs.py` (速度 4%/逻辑秒)
+[  0.55s] [94mTRAJ  [0m | + tool.result        工具结果 run_terminal_command
+[  1.20s] [90mSYSTEM[0m | LLM 调用耗时 0.66s（4 条消息）
+[  1.20s] [94mTRAJ  [0m | + agent.output       回复用户
+[  1.20s] [92mAGENT [0m | 任务已在后台启动（task_id=T1，命令：`python analyze_logs.py`）。我不会空等它运行，等它真正完成后会收到系统事件，届时我再基于结果给你结论。
+[  2.73s] [95mTASK  [0m | T1 `python analyze_logs.py` 进度 22% (pid=14808)
+[  4.00s] [96mUSER  [0m | (interrupt) 取消
+[  4.00s] [94mTRAJ  [0m | + user.interrupt     用户打断：取消
+[  4.00s] [94mTRAJ  [0m | + system.note        打断回执，取消任务 ['T1']
+[  4.01s] [95mTASK  [0m | T1 子进程已终止 🛑 (pid=14808, 进度 36%)
+[  5.37s] [90mSYSTEM[0m | LLM 调用耗时 1.37s（7 条消息）
+[  5.37s] [94mTRAJ  [0m | + agent.output       回复用户
+[  5.37s] [92mAGENT [0m | 已收到，后台任务 T1（`python analyze_logs.py`）已取消，进程已终止。需要我重新启动或换个命令再跑吗？
+
+==============================================================================
+  场景 4｜并行工具的取消与状态查询：三脚本竞速 + 按 50% 阈值取消 + 整合报告
+==============================================================================
+[  0.00s] [96mUSER  [0m | (immediate) 同时运行这三个分析脚本：`python analyze_fast.py`、`python analyze_mid.py`、`python analyze_slow.py`。哪个脚本先完成，你就查询另外两个脚本的进度；如果某个脚本进度还没超过 50%，就取消它；其余脚本完成后，把所有已完成脚本的结果整合成一份报告给我。
+[  0.00s] [94mTRAJ  [0m | + user.input         用户消息（immediate）：同时运行这三个分析脚本：`python analyze_fast.py`、`python analyze_mid.py`、`python analyze_slow.py`。哪个脚本先完成，你就查询另外两个脚本的进度；如果某个脚本进度还没超过 50%，就取消它；其余脚本完成后，把所有已完成脚本的结果整合成一份报告给我。
+[  0.83s] [90mSYSTEM[0m | LLM 调用耗时 0.83s（2 条消息）
+[  0.83s] [94mTRAJ  [0m | + agent.tool_call    调用工具 run_terminal_command, run_terminal_command, run_terminal_command
+[  0.83s] [92mAGENT [0m | 我来同时启动这三个分析脚本。
+[  0.83s] [95mTASK  [0m | 启动真实子进程任务 T1: `python analyze_fast.py` (速度 3%/逻辑秒)
+[  0.83s] [94mTRAJ  [0m | + tool.result        工具结果 run_terminal_command
+[  0.83s] [95mTASK  [0m | 启动真实子进程任务 T2: `python analyze_mid.py` (速度 2%/逻辑秒)
+[  0.83s] [94mTRAJ  [0m | + tool.result        工具结果 run_terminal_command
+[  0.83s] [95mTASK  [0m | 启动真实子进程任务 T3: `python analyze_slow.py` (速度 1%/逻辑秒)
+[  0.83s] [94mTRAJ  [0m | + tool.result        工具结果 run_terminal_command
+[  1.79s] [90mSYSTEM[0m | LLM 调用耗时 0.96s（6 条消息）
+[  1.79s] [94mTRAJ  [0m | + agent.output       回复用户
+[  1.79s] [92mAGENT [0m | 三个脚本已在后台同时启动：
+
+- `analyze_fast.py` → T1
+- `analyze_mid.py` → T2
+- `analyze_slow.py` → T3
+
+我会等第一个完成的通知，然后立刻查询另外两个的进度并按规则处理（进度未过 50% 的取消，已超 50% 的保留等待），最后把已完成脚本的结果整合成报告。
+[  3.82s] [95mTASK  [0m | T1 `python analyze_fast.py` 进度 21% (pid=13388)
+[  5.02s] [95mTASK  [0m | T2 `python analyze_mid.py` 进度 20% (pid=14732)
+[  6.62s] [95mTASK  [0m | T1 `python analyze_fast.py` 进度 42% (pid=13388)
+[  9.03s] [95mTASK  [0m | T1 `python analyze_fast.py` 进度 60% (pid=13388)
+[  9.03s] [95mTASK  [0m | T2 `python analyze_mid.py` 进度 40% (pid=14732)
+[  9.04s] [95mTASK  [0m | T3 `python analyze_slow.py` 进度 20% (pid=11832)
+[ 11.83s] [95mTASK  [0m | T1 `python analyze_fast.py` 进度 81% (pid=13388)
+[ 13.04s] [95mTASK  [0m | T2 `python analyze_mid.py` 进度 60% (pid=14732)
+[ 14.63s] [95mTASK  [0m | T1 `python analyze_fast.py` 进度 100% (pid=13388)
+[ 14.65s] [95mTASK  [0m | T1 完成 ✅ (pid=13388, returncode=0)
+[ 14.65s] [94mTRAJ  [0m | + async.result       异步完成 T1
+[ 15.44s] [90mSYSTEM[0m | LLM 调用耗时 0.79s（8 条消息）
+[ 15.45s] [94mTRAJ  [0m | + agent.tool_call    调用工具 query_task, query_task
+[ 15.45s] [92mAGENT [0m | T1（analyze_fast.py）已率先完成。现在查询另外两个进度。
+[ 15.45s] [93mTOOL  [0m | query_task(T2) -> running 72%
+[ 15.45s] [94mTRAJ  [0m | + tool.result        工具结果 query_task
+[ 15.45s] [93mTOOL  [0m | query_task(T3) -> running 35%
+[ 15.45s] [94mTRAJ  [0m | + tool.result        工具结果 query_task
+[ 16.05s] [90mSYSTEM[0m | LLM 调用耗时 0.61s（11 条消息）
+[ 16.05s] [94mTRAJ  [0m | + agent.tool_call    调用工具 cancel_task
+[ 16.05s] [92mAGENT [0m | 按计划处理：T2 已到 72%（超过 50%，保留等待），T3 只有 35%（未过 50%，取消）。
+[ 16.05s] [93mTOOL  [0m | cancel_task(T3) -> 已取消 (进度 37%)
+[ 16.05s] [94mTRAJ  [0m | + tool.result        工具结果 cancel_task
+[ 16.06s] [95mTASK  [0m | T3 子进程已终止 🛑 (pid=11832, 进度 37%)
+[ 16.69s] [90mSYSTEM[0m | LLM 调用耗时 0.63s（13 条消息）
+[ 16.69s] [94mTRAJ  [0m | + agent.output       回复用户
+[ 16.69s] [92mAGENT [0m | 已处理完毕，当前状态：
+
+- **T1（fast）**：✅ 已完成
+- **T2（mid）**：72% → 已超过 50%，**保留等待完成**
+- **T3（slow）**：37% → 未过 50%，**已取消**
+
+等 T2 完成后，我会把 T1 + T2 的结果整合成报告给你。
+[ 17.04s] [95mTASK  [0m | T2 `python analyze_mid.py` 进度 80% (pid=14732)
+[ 21.05s] [95mTASK  [0m | T2 `python analyze_mid.py` 进度 100% (pid=14732)
+[ 21.06s] [95mTASK  [0m | T2 完成 ✅ (pid=14732, returncode=0)
+[ 21.06s] [94mTRAJ  [0m | + async.result       异步完成 T2
+[ 23.24s] [90mSYSTEM[0m | LLM 调用耗时 2.18s（15 条消息）
+[ 23.24s] [94mTRAJ  [0m | + agent.output       回复用户
+[ 23.24s] [92mAGENT [0m | T2 也已完成。以下是整合报告。
+
+---
+
+## 分析报告（整合 T1 + T2）
+
+**执行概况**
+
+| 任务 | 脚本 | 状态 | 耗时档位 |
+|---|---|---|---|
+| T1 | `analyze_fast.py` | ✅ 完成 | fast（最先完成） |
+| T2 | `analyze_mid.py` | ✅ 完成 | mid（72% 时被保留，跑完） |
+| T3 | `analyze_slow.py` | ⛔ 已取消 | slow（取消时 37%） |
+
+**分析对象**
+
+- 输入文件：`D:\agent study\ai-agent-book\book\chapter4.md`
+- SHA-256：`fbb0eee9792c2a0632ba5df5ecb0b43d70ede739be679ac10b657d13f1f6287a`
+- 规模：448 行 / 69,415 字节
+
+**核心指标（T1 与 T2 完全一致）**
+
+| 指标 | 数值 |
+|---|---|
+| heading_count（标题数） | 20 |
+| experiment_mentions（"实验"提及） | 18 |
+| async_mentions（"异步"提及） | 10 |
+| error_keyword_count（错误关键词） | 19 |
+| lines（行数） | 448 |
+| bytes（字节数） | 69,415 |
+
+**结论**
+
+1. **两个已完成脚本对同一输入得出了完全相同的指标**，且输入哈希一致，说明结果可互相验证、可信度高。
+2. 从内容特征看，该章节（chapter4.md）明显聚焦**异步**主题：异步提及 10 次、实验相关提及 18 次，配合 20 个标题与 19 处错误关键词，符合"异步 Agent 实验/示例"类章节的特征。
+3. T3（slow）因进度未过半被取消，其未产出结果；如需补充其独有维度，可后续单独重跑。
+
+报告完毕。
+
+演示结束。
